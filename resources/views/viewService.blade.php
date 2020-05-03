@@ -50,4 +50,20 @@
 
 @section('js-files')
     <script src="/js/owl.carousel.min.js" ></script>
+    <script>
+        $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items:1,
+            loop:true,
+            margin: 30,
+            slideSpeed : 1000,
+            dots:true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            nav: true,
+             navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']
+        });
+      });
+    </script>
+    
 @endsection

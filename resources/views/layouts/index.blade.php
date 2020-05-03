@@ -17,13 +17,13 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/slick-theme.css" />
     <link rel="stylesheet" href="/css/style.css "/>
     <link rel="stylesheet" href="/css/slick.css" />
-    <link rel="stylesheet" href="/css/slick-theme.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/css/animate.css"/>
     <link rel="stylesheet" href="/versiya/css/bvi.min.css" type="text/css">
-    @yield('css-files')
+    @yield('css-files') 
 
     <!-- /Yandex.Metrika counter -->
     <meta name="yandex-verification" content="f763e6c40f67061e" />
