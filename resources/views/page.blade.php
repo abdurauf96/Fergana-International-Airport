@@ -71,6 +71,9 @@
     
     @include('sections.partners')
 @endsection
-@section('script')
 
-@stop
+@section('js-files')
+    <!--yandex karta-->
+    <link  href="https://api-maps.yandex.ru/2.1?apikey=e0635f6b-47e8-4e2f-8248-c3f242e8ab27&lang=<идентификатор языка>&<дополнительные параметры>
+    ">
+@endsection

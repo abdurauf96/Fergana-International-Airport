@@ -15,14 +15,19 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-    @include('sections.styles')
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css "/>
+    <link rel="stylesheet" href="/css/slick.css" />
+    <link rel="stylesheet" href="/css/slick-theme.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/css/animate.css"/>
+    <link rel="stylesheet" href="/versiya/css/bvi.min.css" type="text/css">
+    @yield('css-files')
+
     <!-- /Yandex.Metrika counter -->
     <meta name="yandex-verification" content="f763e6c40f67061e" />
     <meta name="google-site-verification" content="ind2WxmdlKIqR03ThBAZgH0g83tViGx_Vll4IZxKF4w" />
-    <!--yandex karta-->
-
-    <link  href="https://api-maps.yandex.ru/2.1?apikey=e0635f6b-47e8-4e2f-8248-c3f242e8ab27&lang=<идентификатор языка>&<дополнительные параметры>
-    ">
     <!-- Yandex.Metrika counter -->
     <script  >
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -36,6 +41,7 @@
             webvisor:true
        });
     </script>
+    
   </head>
   <noscript><div><img src="https://mc.yandex.ru/watch/56139070" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <body>
@@ -61,8 +67,6 @@
             <a class="footer__link footer__call" href="tel:+998 73 241-60-04">+998 73 241-60-04</a>
             <a class="footer__link footer__mail" href="mailto">info.feg@uzbairports.uz</a>
             <a class="footer__link dover" href="tel:+998 73 241-60-03"><span style="font-size:11pt">@lang('messages.dover'):</span> +998 73 241-60-03</a>
-            <a href="/uz/services">uzb</a>
-            <a href="/ru/services">rus</a>
           </div>
 
           <div class="footer__item">
@@ -139,7 +143,22 @@
         <a  href="/page/kak-dobrat-sya" class="btn" data-toggle="tooltip" data-placement="left" title="@lang('messages.how')"><i class="fa fa-bus"></i></a>
         <a  href="/our-location" class="btn" data-toggle="tooltip" data-placement="left" title="@lang('messages.location')"><i class="fa fa-map"></i></a>
     </div>
-    @include('sections.scripts')
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script> --}}
+    <script src="/js/jquery-2.1.1.min.js" ></script>
+    <script src="/js/popper.js" ></script>
+    <script src="/js/bootstrap.min.js"  ></script>
+    <script src="/js/slick.min.js" ></script>
+    <script src="/js/main.js" ></script>
+    <script src="/js/my.js" ></script>
+    <script src="/js/wow.min.js" ></script>
+    <script src="/versiya/js/bvi-init-panel.js" ></script>
+    <script src="/versiya/js/bvi.min.js" ></script>
+    <script src="/versiya/js/js.cookie.js" ></script>
+    <script>
+          new WOW().init();
+    </script>
+    @yield('js-files')
+    
  <!--<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=a698c4afdb5ef4280e3b1ef2af5e3c4b" charset="UTF-8"></script>-->
   </body>
 </html>

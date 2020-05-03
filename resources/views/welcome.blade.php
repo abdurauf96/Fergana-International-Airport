@@ -1,5 +1,11 @@
 @extends('layouts.index')
 
+@section('css-files')
+  <link rel="stylesheet" href="/css/swiper.css" />
+@endsection
+
+
+
 @section('content')
     <div class="head slider collectonme">
         <div class="container-fluid slider_img"  style="background-image: url('/images/covid.jpg');" >
@@ -42,4 +48,47 @@
     @include('sections.posts')
     @include('sections.partners')
     
+@endsection
+
+@section('js-files')
+  <script src="/js/swiper.js" ></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 2000,
+          waitForTransition:true
+        },
+        loop: true,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 5,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }
+      });
+
+  </script>
 @endsection

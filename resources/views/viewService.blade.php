@@ -1,5 +1,10 @@
 @extends('layouts.index')
 
+@section('css-files')
+    <link rel="stylesheet" href="/css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css"/>
+@endsection
+
 @section('content')
     @include('sections.header')
     @include('sections.top')
@@ -41,4 +46,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js-files')
+    <script src="/js/owl.carousel.min.js" ></script>
 @endsection

@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/{locale?}', 'IndexController@index')->name('home');
 Route::get('/lang/{locale}', function($locale){
     session(['locale'=>$locale]);
     return back();
@@ -50,3 +49,5 @@ Route::post('/get-post', 'QueryController@getPost');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/{locale?}', 'IndexController@index')->name('home');

@@ -55,3 +55,7 @@
         </div>
     </div>
 @endsection
+
+@section('js-files')
+    <script src="/js/share.js" ></script>
+@endsection

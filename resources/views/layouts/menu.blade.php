@@ -5,7 +5,7 @@
   </li>
   @foreach ($items as $item)
   <li class="topmenu__item" tab-index="0">
-    <a class="topmenu__link" href="#">{{ $item->getTranslatedAttribute('title', \App::getLocale(), 'ru') }} </a>
+    <a class="topmenu__link" href="#">{{ $item->translate(\App::getLocale())->title }} </a>
     <div class="megadrop">
     <ul>
       @foreach ($item->children as $submenu)
