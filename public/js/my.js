@@ -1,4 +1,5 @@
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Fergana&appid=0e695f70b4fc658773b511d44b35cc79')
+$(document).ready(function(){
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=Fergana&appid=0e695f70b4fc658773b511d44b35cc79')
     .then(response => response.json())
     .then( function(data){
         $('#temp').html(Math.round(data.main.temp - 273) + '   &degC');
@@ -20,7 +21,24 @@
     //     console.log(data);
     // });
     
+    const elModal = document.querySelector('.layer');
+    const elCancelModal = document.querySelector('.hide-modal-btn');
     
+    if(location.href=="https://ferganaairport.uz/"){
+      setTimeout(function(){
+        elModal.classList.add('modal--show');
+      }, 16000)
+    }
+      
+    // function showLayer(){
+    //   elModal.classList.add('modal--show');
+    // }
+    
+    // setInterval(showLayer, 300000);
+    
+    elCancelModal.addEventListener('click', () => {
+      elModal.classList.remove('modal--show');
+    });
     
     $('.getReys').click(function(e){
         e.preventDefault();
@@ -35,67 +53,29 @@
             url: '/get-reys',
             data: {key:key},
             success:function(data){
-                $('#resReys').html(data);
+                $('.mytable__wrapper').html(data);
             }
         })
     })
     
     
 
-      $('.getTender').click(function(e){
-          e.preventDefault()
-          $(this).addClass('news__link--active')
-          $(this).siblings().removeClass('news__link--active')
-          $('#tender').css('display', 'block');
-          $('#info').css('display', 'none');
-          $('#news').css('display', 'none');
-      })
+      
 
-    $('.getNews').click(function(e){
-        e.preventDefault()
-        $(this).addClass('news__link--active')
-        $(this).siblings().removeClass('news__link--active')
-        $('#news').css('display', 'block');
-        $('#info').css('display', 'none');
-        $('#tender').css('display', 'none');
-    })
-
-    $('.getInfo').click(function(e){
-        e.preventDefault()
-        $(this).addClass('news__link--active')
-        $(this).siblings().removeClass('news__link--active')
-        $('#info').css('display', 'block');
-        $('#news').css('display', 'none');
-        $('#tender').css('display', 'none');
-    })
+// $('.more').click(function(e){
+//     e.preventDefault()
+//     var key=$(this).attr('value');
+//     if (key=='false') {
+//         $(this).attr('value', 'true')
+//         $(this).parent().parent().parent().siblings('.post_body').css('display', 'block');
+//     }else{
+//         $(this).attr('value', 'false')
+//         $(this).parent().parent().parent().siblings('.post_body').css('display', 'none');
+//     }
+// })
 
 
-$('.more').click(function(e){
-    e.preventDefault()
-    var key=$(this).attr('value');
-    if (key=='false') {
-        $(this).attr('value', 'true')
-        $(this).parent().parent().parent().siblings('.post_body').css('display', 'block');
-    }else{
-        $(this).attr('value', 'false')
-        $(this).parent().parent().parent().siblings('.post_body').css('display', 'none');
-    }
-})
 
-$('.getVilet').click(function(e){
-    e.preventDefault()
-    $(this).addClass('tablo__active2')
-    $('.getPrilet').removeClass('tablo__active2')
 
-    $('#vilet').css('display', 'block')
-    $('#prilet').css('display', 'none')
 
-})
-
-$('.getPrilet').click(function(e){
-    e.preventDefault()
-    $(this).addClass('tablo__active2')
-    $('.getVilet').removeClass('tablo__active2')
-    $('#vilet').css('display', 'none')
-    $('#prilet').css('display', 'block')
-})
+// $(".getVilet").click(function(e){e.preventDefault(),$(this).addClass("tablo__active2"),$(".getPrilet").removeClass("tablo__active2"),$("#vilet").css("display","block"),$("#prilet").css("display","none"),$(".tablo__wrapper").animate({scrollLeft:800},"slow")}),$(".getPrilet").click(function(e){e.preventDefault(),$(this).addClass("tablo__active2"),$(".getVilet").removeClass("tablo__active2"),$("#vilet").css("display","none"),$("#prilet").css("display","block"),$(".tablo__wrapper").animate({scrollLeft:100},"slow")})

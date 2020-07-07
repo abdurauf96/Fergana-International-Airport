@@ -1,0 +1,119 @@
+.form-modal {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  transition: 0.3s ease;
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+
+  &.form-modal--active {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: unset;
+  }
+}
+
+.modal-dialog {
+  width: 500px;
+  height: 80vh;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #dedede;
+
+  .close {
+    margin-top: 10px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    opacity: 0.7;
+    transition: 0.3s ease;
+    margin-right: 2px;
+    &:hover,&:focus {
+      opacity: 1;
+    }
+  }
+}
+
+.mymodal__head {
+  width: 100%;
+  padding: 20px;
+  color: #2e2e2e;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center !important; 
+  line-height: 1.5;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.mymodal__form {
+  display: flex;
+  flex-direction: column;
+  .form-control[type="submit"] {
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover, &:focus {
+      transform: translateY(-5px);
+    }
+  }
+
+  input[type="text"] {
+    background-image: url("/images/user.svg");
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    background-size: 4%; 
+  }
+
+  input[type="email"] {
+    background-image: url("/images/envelope.svg");
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    background-size: 4%; 
+  }
+
+  input,
+  textarea {
+    margin-bottom: 25px;
+    border: 1px solid $ac;
+    background-color: #f6f6f6;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    &::placeholder {
+      color: #484848;
+      font-size: 16px;
+      font-weight: 300; 
+    }
+  }
+
+  input[type="submit"] {
+    max-width: 40%;
+    margin: 0 auto;
+    background-color: #f2bc00;
+    color: white;
+    min-height: 40px;
+    line-height: 30px;
+    text-transform: uppercase; 
+  }
+  textarea {
+    min-height: 180px; 
+  }
+}
+

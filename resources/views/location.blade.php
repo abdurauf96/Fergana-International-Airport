@@ -1,8 +1,11 @@
 @extends('layouts.index')
 
 @section('content')
+<div class="page-body">
+  
     @include('sections.header')
-    @include('sections.top')
+  
+
     @component('layouts.bread')
         @slot('page_img')
         /images/loc2.png

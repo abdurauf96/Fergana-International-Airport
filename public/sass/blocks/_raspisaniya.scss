@@ -1,0 +1,77 @@
+.timetable {
+  background-color: #f9f9f9;
+  padding: 10px 0;
+}
+.timetable__head {
+  color: #262626;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.timetable .table thead {
+  background-color: #262626;
+}
+.timetable .table thead th {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid #3c3c3c;
+}
+.timetable .table tbody tr:nth-child(2n-1) {
+  background-color: #efefef;
+}
+.timetable .table tbody tr td {
+  color: #494949;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 6px;
+}
+.timetable .table tbody tr .rowspan {
+  background-color: #2275d3 !important;
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.raspisaniya-body {
+  .page__right {
+    overflow-x: auto;
+  }
+  .page__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .usluga__list {
+    display: flex;
+    width: 100%;
+  }
+  .usluga__left {
+    width: 100%;
+  }
+  .usluga__list--link {
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    padding-left: 10px;
+  }
+  .usluga__list--item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .timetable {
+    min-width: 700px;
+
+    table {
+      width: 100%;
+    }
+  }
+}

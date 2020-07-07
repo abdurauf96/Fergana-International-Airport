@@ -16,10 +16,6 @@ Route::get('/lang/{locale}', function($locale){
     return back();
 });
 
-//Routes for infokiosk
-Route::get('/{locale}/services', 'PageController@services');
-Route::get('/{locale}/schedule', 'PageController@schedule');
-//Route::get('/{locale?}/schedule', 'PageController@schedule');
 
 
 Route::get('/cache', function(){
@@ -51,3 +47,6 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/{locale?}', 'IndexController@index')->name('home');
+//Routes for infokiosk
+Route::get('/{locale}/services', 'PageController@services');
+Route::get('/{locale}/schedule', 'PageController@schedule');

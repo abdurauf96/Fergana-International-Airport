@@ -1,0 +1,60 @@
+.airport-body {
+  .table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+  }
+  .table {
+    width: 100%;
+  }
+
+  .avia {
+    background-color: #f9f9f9;
+  }
+  .avia__head {
+    color: #262626;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .avia table {
+    margin-top: 30px;
+  }
+  .avia table thead {
+    background-color: #262626;
+  }
+  .avia table thead th {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #3c3c3c;
+  }
+  .avia table tbody tr:nth-child(2n-1) {
+    background-color: #efefef;
+  }
+  .avia table tbody tr td,
+  .avia table tbody tr .avia__email {
+    color: #272727;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .avia table tbody tr .avia__link {
+    color: #2899fe;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+  .table img {
+    max-width: 60px;
+    margin: 0 auto;
+  }
+  // .page__wrapper {
+  //   padding-top: 30px;
+  //   display: -ms-grid;
+  //   display: grid;
+  //   -ms-grid-columns: 1fr 4fr;
+  //   grid-template-columns: 1fr 4fr;
+  //   grid-column-gap: 40px;
+  // }
+}

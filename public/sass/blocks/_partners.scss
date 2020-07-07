@@ -1,0 +1,112 @@
+.portner {
+  padding: 70px 0; 
+  background-image: url('../images/tablo-fon.jpg');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  .slick-prev {
+    background-image: url("../../images/icons/arrow.png");
+    background-size: 50%;
+    background-color: #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    left: 0;
+    z-index: 100;
+    border: 2px solid transparent;
+    &:hover,&:focus {
+      border: 2px solid $mc;
+    }
+    &::before {
+      content: '';
+    }
+  }
+  .slick-next {
+    background-image: url("../../images/icons/arrow.png");
+    background-size: 50%;
+    background-color: #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg);
+    width: 50px;
+    right: 0;
+    height: 50px;
+    top: 40%;
+    z-index: 100;
+    border: 2px solid transparent;
+    &:hover,&:focus {
+      border: 2px solid $mc;
+    }
+    &::before {
+      content: '';
+    }
+  }
+}
+
+.portner__head {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  /* Text style for "Наши партн" */
+  letter-spacing: -1.08px;
+  text-align: center;
+  padding-bottom: 50px; 
+}
+.portner__wrapper {
+  .slick-arrow {
+    z-index: 1000; 
+  }
+  .slick-slide {
+    outline: none;
+  }
+  .slick-arrow {
+    &::before {
+      color: white;
+      background-color: #004a79;
+      border-radius: 50%; 
+    }
+    &:hover::before {
+      color: #8222da !important;
+      background-color: white; 
+    }
+  }
+} 
+
+
+
+.post_text a {
+    font-size: 13pt;
+    color: #072359;
+}
+
+
+.portner__item {
+  height: 200px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+  margin: 0 10px; 
+  background-color:white;
+
+  img {
+    max-width: 100%;
+    filter: grayscale(100%); 
+    transition: filter 0.3s ease;
+  }
+
+  &:hover img {
+    filter: grayscale(0); 
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .portner {
+    padding: 30px 0;
+  }
+}

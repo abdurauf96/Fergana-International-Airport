@@ -1,8 +1,9 @@
 @extends('layouts.index')
 
 @section('content')
+<div class="page-body">
     @include('sections.header')
-    @include('sections.top')
+   
     @component('layouts.bread')
         @slot('page_img')
         /images/news.jpg
@@ -30,7 +31,19 @@
                 <div class="wifi">
                     <div class="wifi__head">{{ $post->getTranslatedAttribute('title', \App::getLocale()) }}</div>
                     <div class="wifi__text">{!! $post->getTranslatedAttribute('body', \App::getLocale()) !!}</div>
-                
+                    @if ($post->images)
+                    <div class="owl-carousel" style="float: left">
+                        @php
+                            $images=json_decode($post->images)
+                        @endphp
+                        @foreach ($images as $image)
+                        <div class="img_item">
+                            <img src="{{ Voyager::image($image) }}" alt="">
+                        </div>
+                        @endforeach
+                    </div>
+                    @endif
+
                     <div class="date_social">
                         <div class="post_date">
                             <span>
@@ -39,13 +52,19 @@
                             <span> <i class="fa fa-eye" aria-hidden="true"></i> {{ $post->view }} </span>
                         </div>
                         <div class="social_icons">
-                            <span> @lang('messages.share') :
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://ferganaairport.uz/post/{{ $post->slug  }}"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://wa.me/?text=http://ferganaairport.uz/post/{{ $post->getTranslatedAttribute('title', \App::getLocale()) }}" class="social-button " id=""><i class="fab fa-whatsapp"></i></a>
-                                <a href="https://telegram.me/share/url?url=http://ferganaairport.uz/post/{{ $post->slug  }}"><i class="fab fa-telegram-plane"></i></a>
-                                <a href="https://twitter.com/intent/tweet?text={{ $post->getTranslatedAttribute('title', \App::getLocale()) }}&amp;url=http://ferganaairport.uz/post/"><i class="fab fa-twitter"></i></a>
+                            <span>@lang('messages.share')</span>:
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://ferganaairport.uz/post/{{ $post->slug  }}">
+                                <img width="20px" height="20px" src="/images/icons/facebook.svg" alt="">
+                            </a>
+                            <a href="https://wa.me/?text=http://ferganaairport.uz/post/{{ $post->getTranslatedAttribute('title', \App::getLocale()) }}" class="social-button " id="">
+                                <img width="20px" height="20px" src="/images/icons/whatsapp.svg" alt="">
+                            </a>
+                            <a href="https://telegram.me/share/url?url=http://ferganaairport.uz/post/{{ $post->slug  }}">
+                                <img width="20px" height="20px" src="/images/icons/telegram.svg" alt="">
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?text={{ $post->getTranslatedAttribute('title', \App::getLocale()) }}&amp;url=http://ferganaairport.uz/post/"><img width="20px" height="20px" src="/images/icons/twitter.svg" alt=""></a>
                                
-                            </span>
+                            
                         </div>
                     </div>
                 <a class="all_news" href="/category/{{ $post->category->slug }}">@lang('messages.all')</a>
@@ -54,8 +73,26 @@
             
         </div>
     </div>
+</div>
 @endsection
 
 @section('js-files')
-    <script src="/js/share.js" ></script>
+<script>
+    $(document).ready(function(){
+        $('.owl-carousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        infinity: false,
+        arrows: true,
+
+        responsive: [{
+            breakpoint: 850,
+            settings: "unslick"
+        }]
+        })
+    });
+</script>
+<script src="/js/share.js" ></script>
 @endsection

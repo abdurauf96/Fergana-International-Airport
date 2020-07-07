@@ -1,0 +1,157 @@
+.tablo {
+  background: url("../../images/tablo-fon.jpg") no-repeat right center;
+  background-size: cover; 
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+
+.tablo__wrapper {
+  overflow-x: auto;
+}
+.tablo__head {
+  color: #262626;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center; 
+}
+.mytable__head {
+  background-color: #004b79;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1px solid white; 
+}
+  
+.mytable__head--item {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+  min-height: 50px;
+  line-height: 50px;
+  text-align: center; 
+}
+.mytable__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+}
+
+.mytable__block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+}
+
+.mytable {
+  min-width: 850px;
+}
+
+.mytable__block--item {
+  min-height: 50px;
+  line-height: 50px;
+  border: 1px solid #dfdfdf;
+  text-align: center;
+  color: #494949;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    width: 50px;
+  }
+}
+
+.mytable__glav--none {
+  display: none; 
+}
+
+.tablo__active2 {
+  color: white;
+  background-color: #004a79;
+}
+
+.tablo__block {
+  min-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #ffffff; 
+}
+
+.tablo__item {
+  border: 1px solid #e4e4e4;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaaaaa;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.38px; 
+  outline: none;
+  transform-origin: 100% 100%;
+  transition: 0.3s ease;
+
+  &:focus {
+    box-shadow: none;
+    border-radius: 0;
+  }
+  img {
+    padding-right: 20px; 
+  }
+}
+
+.getReys:hover {
+  background-color: #004a79;
+  color: white; 
+}
+
+.tablo__active {
+  color: white;
+  background-color: #d8aa08; 
+}
+
+  
+.tablo__podrob {
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 20px;
+  display: block; 
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: -10px;
+  z-index: 99;
+  cursor: pointer;
+  padding: 10px;
+  width: 70px; 
+}
+#myBtn img{
+    width: 60px;
+}
+
+
+@media only screen and (max-width: 650px) {
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: -5px;
+    z-index: 99;
+    cursor: pointer;
+    padding: 10px;
+    width: 60px; 
+  }
+  #myBtn img{
+      width: 40px;
+  }
+  .tablo {
+    padding: 30px 0;
+  }
+}

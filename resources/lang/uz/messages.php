@@ -38,7 +38,8 @@ return [
     'nashi_part'=>'Hamkorlar',
     'infor'=>'Ma`lumotlar',
     'tenders'=>'Tenderlar',
-    'all_news'=>'Barcha yangiliklar',
+    'mintrans'=>'Transport vazirligi',
+    'all_news'=>'Ko`proq',
     'all_tenders'=>'Barcha tenderlar',
     'all_infos'=>'Barcha malumotlar',
     'nashi_usl'=>'Bizning xizmatlar',
@@ -93,7 +94,9 @@ return [
     'geo'=>'Parvozlar geografiyasi',
     'dover'=>'Ishonch telefoni',
 
-
+    'podpis'=>'Bizning telegram kanalimizga obuna bo’lib eng so’nggi yangiliklardan xabardor boling',
+    'podpisatsa'=>'Obuna bo’lish',
+    'key'=>'kalit so`z',
 ]
 
 ?>

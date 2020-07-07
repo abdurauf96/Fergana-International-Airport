@@ -1,0 +1,96 @@
+
+.faq {
+  padding: 70px 0;
+
+  .usluga__list--link {
+    padding-right: 35px;
+  }
+
+}
+.faq__header {
+  color: #262626;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* Text style for "FAQ" */
+  letter-spacing: -1.08px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.faq__wrapper {
+  width: 70%;
+}
+.faq__item {
+  border-bottom: 1px solid #ececec;
+}
+.faq__head {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.faq__head:hover {
+  cursor: pointer;
+}
+.faq__head i {
+  color: #f2bc00;
+  transition: all 0.2s linear;
+}
+.faq__head span {
+  color: #3b3b3b;
+  font-size: 17px;
+  font-weight: 700;
+  /* Text style for "Лучшая цен" */
+  letter-spacing: -0.72px;
+  padding-left: 20px;
+}
+.faq__main {
+  display: none;
+  padding: 30px 20px 30px 100px;
+}
+.faq__main--text {
+  position: relative;
+  color: #737373;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.6px;
+}
+.faq__main--text::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: #f2bd05;
+  left: -30px;
+}
+
+.plus-img {
+  transition: 0.3s ease;
+}
+
+.i__active {
+  transform: rotate(45deg);
+}
+
+
+@media only screen and (max-width: 968px) {
+  .faq__wrapper {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .usluga__list {
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .faq__head {
+    span {
+      font-size: 15px;
+    }
+  }
+  .faq__main {
+    display: none;
+    padding: 15px 10px 15px 50px;
+  }
+}

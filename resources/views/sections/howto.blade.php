@@ -1,4 +1,4 @@
-<div class="container-fluid howto">
+<div class=" howto">
   <div class="wifi__head"> в аэропорт / из аэропорта</div>
   <div class="information__block">
     <div class="information__block--left"><img src="/images/taksi.jpg" alt="kuting"/></div>

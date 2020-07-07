@@ -1,0 +1,124 @@
+.howtoreach-body {
+  .howto__head {
+    color: #262626;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .howto__description {
+    text-align: center;
+    color: #262626;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .information__block {
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ededed;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  .information__block--right {
+    padding: 15px;
+    padding-left: 0;
+    width: calc(95% - 300px);
+  }
+  .information__block--left img {
+    object-fit: cover;
+      max-width: unset;
+  }
+
+  .information__right--text:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 15px 30px;
+  }
+
+  .information__block--title {
+    color: #262626;
+    font-size: 18px;
+    font-weight: 900;
+    /* Text style for "Международ" */
+    letter-spacing: -0.54px;
+    margin-bottom: 20px;
+  }
+  .information__block--link {
+    color: #2275d3;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    /* Text style for "Подробнее" */
+    letter-spacing: -0.42px;
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  .information__block--link:hover {
+    background-color: #2275d3;
+    color: white;
+  }
+
+  .page__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .page__right {
+    width: 70%;
+  }
+
+  .taxi-services {
+    .portner__item {
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 968px) {
+  .howtoreach-body {
+    .page__right {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .howtoreach-body {
+    .information__block--left {
+      width: 200px;
+      img {
+        width: 200px;
+        height: 100%;
+      }
+    }
+    .information__block--right {
+      width: calc(95% - 200px);
+    }
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .howtoreach-body {
+    .information__block {
+      flex-direction: column;
+    }
+    .information__block--right,
+    .information__block--left {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .information__block--right {
+      padding-left: 15px;
+    }
+  }
+}

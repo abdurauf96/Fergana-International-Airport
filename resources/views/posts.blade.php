@@ -1,8 +1,10 @@
 @extends('layouts.index')
 
 @section('content')
+<div class="page-body">
+
     @include('sections.header')
-    @include('sections.top')
+    
     @component('layouts.bread')
         @slot('page_img')
            /images/news.jpg
@@ -14,7 +16,7 @@
         @endslot
     @endcomponent
 
-    <div class="container-fluid ">
+    <div class="main-content">
         <div class="container usluga__wrapper">
             <div class="usluga__left">
                 <div class="usluga__left--avtor">@lang('messages.othernews')</div>
@@ -31,17 +33,21 @@
             </div>
             <div class="post__right">
                 <div class="category_blok">
+                     <div class="category_item">
+                        <a href="/category/novosti">@lang('messages.news')</a>
+                        <div class="line"></div>
+                    </div>
                     <div class="category_item">
-                        <a href="/category/tendery">Тендеры</a>
+                        <a href="/category/tendery">@lang('messages.tenders')</a>
                         <div class="line"></div>
                     </div>
                     
                     <div class="category_item">
-                        <a href="/category/informaciya">Информации</a>
+                        <a href="/category/uzbekistan-airports">АО «Uzbekistan Airports»</a>
                         <div class="line"></div>
                     </div>
-                    <div class="category_item">
-                        <a href="/category/novosti">Новости</a>
+                   <div class="category_item">
+                        <a href="/category/mintrans">@lang('messages.mintrans')</a>
                         <div class="line"></div>
                     </div>
                     
@@ -50,46 +56,21 @@
                 <div class="post_item">
                     <div class="post_content">
                         <div class="post_image">
-                            <img src="{{ Voyager::image($post->thumbnail('medium')) }}" alt="">
+                            <img width="200" height="150" src="{{ Voyager::image($post->thumbnail('medium')) }}" alt="">
                         </div>
                         <div class="post_text">
-                            <h5>{{ $post->getTranslatedAttribute('title', \App::getLocale()) }}</h5>
+                            <a href="{{ route('viewPost', $post->slug) }}">{{ $post->getTranslatedAttribute('title', \App::getLocale()) }}</a>
                             <p>{{ $post->getTranslatedAttribute('excerpt', \App::getLocale()) }}</p>
                             <div class="post_date">
                                 <span>
                                     <i class="fa fa-clock-o" aria-hidden="true"></i>
                                     {{ $post->created_at->format('M d, Y') }} 
                                 </span>
-                                <span> <i class="fa fa-eye" aria-hidden="true"></i> {{ $post->view }}</span>
-                                <a href="#" value="false" class=" more">@lang('messages.more')</a>
+                                
+                                <a href="{{ route('viewPost', $post->slug) }}" value="false" class=" more">@lang('messages.more')</a>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="post_body">
-                        <div class="wifi">
-                            <div class="wifi__head">{{ $post->getTranslatedAttribute('title', \App::getLocale()) }}</div>
-                            <div class="wifi__text">{!! $post->getTranslatedAttribute('body', \App::getLocale()) !!}</div>
-                           
-                            <div class="date_social">
-                                <div class="post_date">
-                                    <span>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i> {{ $post->created_at->format('M d, Y') }}
-                                    </span>
-                                    <span> <i class="fa fa-eye" aria-hidden="true"></i> {{ $post->view }} </span>
-                                </div>
-                                <div class="social_icons">
-                                    <span> @lang('messages.share') :
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://ferganaairport.uz/post/{{ $post->slug  }}"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://wa.me/?text=http://ferganaairport.uz/post/{{ $post->getTranslatedAttribute('title', \App::getLocale()) }}" class="social-button " id=""><i class="fab fa-whatsapp"></i></a>
-                                <a href="https://telegram.me/share/url?url=http://ferganaairport.uz/post/{{ $post->slug  }}"><i class="fab fa-telegram-plane"></i></a>
-                                <a href="https://twitter.com/intent/tweet?text={{ $post->getTranslatedAttribute('title', \App::getLocale()) }}&amp;url=http://ferganaairport.uz/post/"><i class="fab fa-twitter"></i></a>
-                                    </span>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>       
                 </div>
                 <hr>
                 @endforeach
@@ -97,5 +78,5 @@
             </div>
         </div>
     </div>
-
+</div>
 @endsection

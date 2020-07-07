@@ -1,0 +1,55 @@
+.header-wrapper {
+  position: relative;
+  height: 100vh;
+}
+
+.bg-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url("../images/feg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+}
+
+.slider__item {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+  h1 {
+    font-size: 50px;
+  }
+}
+
+.main-slide-navigators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  li {
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    
+    font-size: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+
+    &.slide--active {
+      background: #632ec2;
+    }
+  }
+}

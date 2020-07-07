@@ -1,8 +1,13 @@
 @extends('layouts.index')
 
 @section('content')
+<div class="page-body  
+    @if ($page->key=="table")
+    raspisaniya-body
+    @elseif ($page->key=="companies" )
+     airport-body raspisaniya-body @else howtoreach-body @endif ">
+    
     @include('sections.header')
-    @include('sections.top')
     @component('layouts.bread')
         @slot('page_img')
        {{  Voyager::image($page->image) }}
@@ -11,13 +16,15 @@
         {{ $page->getTranslatedAttribute('title', \App::getLocale()) }}
         @endslot
     @endcomponent
-    <div class="container-fluid usluga"> 
+    
+    <div class=" usluga"> 
         <div class="container page__wrapper">
             <div class="usluga__left">
                 <div class="usluga__left--avtor">@lang('messages.drugie')</div>
                 <ul class="usluga__list">
                     @foreach ($pages as $item)
-                    <li class="usluga__list--item"><a class="@if('page/'.$item->slug == Request::path() ) sidebar_active @endif usluga__list--link" href="{{ route('page', $item->slug) }}">
+                    <li class="usluga__list--item">
+                        <a class="@if('page/'.$item->slug == Request::path() ) sidebar_active @endif usluga__list--link" href="{{ route('page', $item->slug) }}">
                         {{ $item->getTranslatedAttribute('title', \App::getLocale()) }} </a>
                     </li>
                     @endforeach
@@ -43,19 +50,7 @@
                     <div class="wifi">
                         <div class="wifi__head">{{ $page->getTranslatedAttribute('title', \App::getLocale()) }}</div>
                         <div class="wifi__text">{!! $page->getTranslatedAttribute('body', \App::getLocale()) !!}</div>
-                        @if ($page->images)
-                        <hr>
-                        <div class="owl-carousel">
-                            @php
-                                $images=json_decode($page->images)
-                            @endphp
-                            @foreach ($images as $image)
-                            <div class="img_item">
-                                <img src="{{ Voyager::image($image) }}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                        @endif
+                        
                     </div>
                 @endif
                 

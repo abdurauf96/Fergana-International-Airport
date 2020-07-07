@@ -21,18 +21,8 @@ class IndexController extends Controller
         ->latest()
         ->limit(3)
         ->get();
-        $tenders=Post::withTranslation(\App::getLocale())
-        ->where('category_id','2')
-        ->latest()
-        ->limit(3)
-        ->get();
-        $infos=Post::withTranslation(\App::getLocale())
-        ->where('category_id','3')
-        ->latest()
-        ->limit(3)
-        ->get();
         
-        return view('welcome', compact('services', 'news', 'flights', 'tenders', 'infos'));
+        return view('welcome', compact('services', 'news'));
     }
 
     public function  services($slug=null)

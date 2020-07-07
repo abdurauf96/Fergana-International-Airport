@@ -1,94 +1,75 @@
 @extends('layouts.index')
 
 @section('css-files')
-  <link rel="stylesheet" href="/css/swiper.css" />
+  
 @endsection
 
 
 
 @section('content')
-    <div class="head slider collectonme">
-        <div class="container-fluid slider_img"  style="background-image: url('/images/covid.jpg');" >
-            @include('sections.header')
-            @include('sections.top')
-            <div class="container slider__wrapper">
-              <div class="slider__item" style="">
-                <!--<div class="slider__item--head">Фергана - Красноярск </div>-->
-                <!--<div class="slider__item--desc">по четвергам </div>-->
-              </div>
-            </div>
-        </div>
-        
-        <div class="container-fluid slider_img "  style="background-image: url('/images/slider.jpg'); " >
-            @include('sections.header')
-            @include('sections.top')
-            <div class="container slider__wrapper">
-              <div class="slider__item">
-                {{-- <div class="slider__item--head">Выиграй 2 билета <br>до ДOXИ</div> --}}
-                
-              </div>
-            </div>
-        </div>
-        
-        
-        <!--<div class="container-fluid slider_img" style="background-image: url('/images/map3.jpg');" >-->
-        <!--  @include('sections.header')-->
-        <!--  @include('sections.top')-->
-        <!--  <div class="container slider__wrapper">-->
-        <!--    <div class="slider__item">-->
-              
-        <!--    </div>-->
-        <!--  </div>-->
-        <!--</div>-->
-        
-    </div>
-   
-    @include('sections.tablo')
-    @include('sections.services')
-    @include('sections.posts')
-    @include('sections.partners')
+<div class="header-wrapper">
+  @include('sections.header')
+  @include('sections.slider')
+</div>    
     
+  @include('sections.tablo')
+  @include('sections.services')
+  @include('sections.posts')
+  @include('sections.partners')
+    
+  <div class="modal"><!-- Place at bottom of page --></div>
 @endsection
 
 @section('js-files')
-  <script src="/js/swiper.js" ></script>
   <script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        centeredSlides: true,
-        observer: true,
-        observeParents: true,
-        autoplay: {
-          delay: 2000,
-          waitForTransition:true
-        },
-        loop: true,
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+    $(document).ready(function(){
 
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 5,
+      $('.getReys').click(function(e){
+        $body = $("body");
+        $body.addClass("loading"); 
+        e.preventDefault();
+        $(this).addClass('tablo__active2');
+        $(this).siblings().removeClass('tablo__active2');
+        var key=$(this).data('key');
+        $.ajax({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
           },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        }
-      });
+          type: 'POST',
+          url: '/get-reys',
+          data: {key:key},
+          success:function(data){
+              $('.mytable__wrapper').html(data);
+                $body.removeClass("loading");
+          }
+        })
+      })
 
+      $('.getPost').click(function(e){
+        e.preventDefault()
+          $body = $("body");
+          $body.addClass("loading");
+          var href=$(this).data('href');
+          
+          var id=$(this).data('id');
+          $(this).addClass('news__link--active')
+          $(this).siblings().removeClass('news__link--active')
+          $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
+            url: '/get-post',
+            data: {id:id},
+            success:function(data){
+                $('#posts').html(data);
+                $('.all_news').attr('href', href);
+                 $body.removeClass("loading");
+            }
+        })   
+      })
+      $('.lazy').lazy();
+    })
+    
   </script>
 @endsection

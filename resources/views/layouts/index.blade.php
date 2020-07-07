@@ -16,14 +16,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/slick-theme.css" />
-    <link rel="stylesheet" href="/css/style.css "/>
-    <link rel="stylesheet" href="/css/slick.css" />
-    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/css/animate.css"/>
-    <link rel="stylesheet" href="/versiya/css/bvi.min.css" type="text/css">
-    @yield('css-files') 
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/my.css" />
+    @yield('css-files')
 
     <!-- /Yandex.Metrika counter -->
     <meta name="yandex-verification" content="f763e6c40f67061e" />
@@ -46,7 +41,16 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/56139070" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <body>
 
-
+  <div class="layer">
+    <div class="modal-box basic-flex">
+      <button type="button" class="btn hide-modal-btn">x</button>
+      <h4>@lang('messages.podpis')</h4>
+      <div class="telegram-join basic-flex">
+        <a href="https://t.me/fegairport">@lang('messages.podpisatsa')</a>
+      </div>
+    </div>
+  </div>
+  
     @yield('content')
 
     <img onclick="topFunction()" title="Вверх" id="myBtn" src="/images/top.png" alt="">
@@ -81,11 +85,13 @@
           <div class="footer__item">
             <div class="footer__head">@lang('messages.contact')</div>
             <button class="footer__otziv" type="button" data-toggle="modal" data-target="#modelId">@lang('messages.ostavit')</button>
-            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="form-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <modal-title class="mymodal__head" id="modelTitleId">@lang('messages.ostavit_title')</modal-title>
+                    <div class="mymodal__head" id="modelTitleId">@lang('messages.ostavit_title')
+                    </div>
+                    
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4></h4>
                   </div>
@@ -137,28 +143,32 @@
       </script>
     <div class="fixed__icon">
 
-        <a href="/page/raspisanie-rejsov"   class="btn" data-toggle="tooltip" data-placement="left" title="@lang('messages.table')"><i class="fa fa-table"></i></a>
-        <a href="/page/geografiya-poletov"  class="btn " class="red-tooltip" data-toggle="tooltip" data-placement="left" title="  @lang('messages.geo')"><i class="fas fa-globe-americas"></i></a>
-        <a  href="/faq" class="btn" data-toggle="tooltip" data-placement="left" title="FAQ"><i class="fa fa-question"></i></a>
-        <a  href="/page/kak-dobrat-sya" class="btn" data-toggle="tooltip" data-placement="left" title="@lang('messages.how')"><i class="fa fa-bus"></i></a>
-        <a  href="/our-location" class="btn" data-toggle="tooltip" data-placement="left" title="@lang('messages.location')"><i class="fa fa-map"></i></a>
+        <a href="/page/raspisanie-rejsov" class="btn" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.table')">
+          <img src="/images/icons/table-solid.svg">
+        </a>
+        <a href="/page/geografiya-poletov"  class="btn " class="red-tooltip" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.geo')">
+          <img src="/images/icons/globe-asia-solid.svg">
+        </a>
+        <a  href="/faq" class="btn" data-toggle="tooltip" data-placement="left" data-title="FAQ">
+          <img src="/images/icons/question-solid.svg">
+        </a>
+        <a  href="/page/kak-dobrat-sya" class="btn" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.how')">
+          <img src="/images/icons/bus-solid.svg">
+        </a>
+        <a  href="/our-location" class="btn" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.location')">
+          <img src="/images/icons/map-solid.svg">
+        </a>
+
     </div>
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script> --}}
-    <script src="/js/jquery-2.1.1.min.js" ></script>
-    <script src="/js/popper.js" ></script>
-    <script src="/js/bootstrap.min.js"  ></script>
-    <script src="/js/slick.min.js" ></script>
     <script src="/js/main.js" ></script>
-    <script src="/js/my.js" ></script>
-    <script src="/js/wow.min.js" ></script>
-    <script src="/versiya/js/bvi-init-panel.js" ></script>
-    <script src="/versiya/js/bvi.min.js" ></script>
-    <script src="/versiya/js/js.cookie.js" ></script>
-    <script>
-          new WOW().init();
-    </script>
+    <script src="/src/aos.js"></script>
+    <script src="/js/jquery.lazy.min.js"></script>
     @yield('js-files')
-    
+    <script>
+      $(function() {
+           AOS.init();
+      });
+ </script>
  <!--<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=a698c4afdb5ef4280e3b1ef2af5e3c4b" charset="UTF-8"></script>-->
   </body>
 </html>

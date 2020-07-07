@@ -1,8 +1,11 @@
 @extends('layouts.index')
 
 @section('content')
+<div class="page-body">
+  
     @include('sections.header')
-    @include('sections.top')
+  
+    
     @component('layouts.bread')
         @slot('page_img')
         /images/faq.jpg
@@ -12,7 +15,7 @@
         @endslot
     @endcomponent
    
-    <div class="container-fluid usluga faq">
+    <div class="usluga faq">
         <div class="container">
           <div class="usluga__head">@lang('messages.faq')</div>
         </div>
@@ -24,7 +27,8 @@
             @foreach ($faqs as $faq)
               <div class="faq__item">
                 <div class="faq__head">
-                  <i class="fa fa-plus @if($loop->first) i__active @endif"></i><span>{{ $faq->getTranslatedAttribute('title', \App::getLocale()) }}</span></div>
+                  <img class="plus-img" src="images/icons/plus-solid.svg" alt="plus" width="16" height="16">
+                  <span>{{ $faq->getTranslatedAttribute('title', \App::getLocale()) }}</span></div>
                 <div class="faq__main @if($loop->first) faq__main--active @endif">
                   <div class="faq__main--text">{{ $faq->getTranslatedAttribute('body', \App::getLocale()) }}</div>
                 </div>
@@ -34,5 +38,5 @@
         </div>
     </div>
 
-    
+  </div>  
 @endsection

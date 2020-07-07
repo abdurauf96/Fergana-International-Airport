@@ -35,7 +35,7 @@ class PageController extends Controller
 
     public function viewService($slug)
     {
-        
+       
         $service=Service::where('slug', $slug)
         ->withTranslation(\App::getLocale())
         ->first();

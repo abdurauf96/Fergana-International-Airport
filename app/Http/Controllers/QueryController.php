@@ -12,8 +12,12 @@ class QueryController extends Controller
     public function getReys()
     {
         $key=$_POST['key'];
-        $flights=Flight::where(['type'=> $key, 'day'=>date('N')])
-        ->withTranslation(\App::getLocale())
+        $flights=\App\Flight::withTranslation(\App::getLocale())
+        ->where([
+            'day'=>date('N'),
+            'type'=>$key
+        ])
+        ->orderBy('time', 'asc')
         ->get();
         $res=view('ajax.resReys', compact('flights'));
         return $res;
@@ -24,8 +28,7 @@ class QueryController extends Controller
         $id=$_POST['id'];
         $posts=Post::where('category_id', $id)
         ->withTranslation(\App::getLocale())
-        ->limit('3')
-        ->where('featured', 1)
+        ->limit(3)
         ->latest()
         ->get();
         $res=view('ajax.resPosts', compact('posts'));

@@ -25,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app['request']->server->set('HTTPS','on');
         
+        view()->composer('sections.header', function($view){
+            $menus=\App\SiteMenu::withTranslation(\App::getLocale())
+            ->whereNull('parent_id')->get();
+            $view->with(compact('menus'));
+        });
+        
         view()->composer('sections.tablo', function($view){
             $flights=\App\Flight::withTranslation(\App::getLocale())
             ->where([
@@ -33,15 +39,7 @@ class AppServiceProvider extends ServiceProvider
             ])
             ->orderBy('time', 'asc')
             ->get();
-
-            $vilets=\App\Flight::withTranslation(\App::getLocale())
-            ->where([
-            'day'=>date('N'),
-            'type'=>'departure'
-            ])
-            ->orderBy('time', 'asc')
-            ->get();
-            $view->with(compact('flights', 'vilets'));
+            $view->with(compact('flights'));
         });
 
         view()->composer('layouts.sidebarService', function($view){
@@ -49,6 +47,7 @@ class AppServiceProvider extends ServiceProvider
             ->get();
             $view->with(compact('services'));
         });
+        
 
         view()->composer('layouts.sidebarPage', function($view){
             $pages=\App\Page::withTranslation(\App::getLocale())

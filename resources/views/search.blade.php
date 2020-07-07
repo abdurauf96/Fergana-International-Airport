@@ -1,8 +1,9 @@
 @extends('layouts.index')
 
 @section('content')
+<div class="page-body">
   @include('sections.header')
-  @include('sections.top')
+  
   @component('layouts.bread')
         @slot('page_img')
             /images/about.jpg
@@ -14,7 +15,7 @@
         @endslot
   @endcomponent
 
-<div class="container-fluid ">
+
     <div class="container">
         {{-- <div class="usluga__head">Услуги общего пользования</div> --}}
     </div>
@@ -119,6 +120,6 @@
             
         @endif
     </div>
+
 </div>
-  
 @endsection
