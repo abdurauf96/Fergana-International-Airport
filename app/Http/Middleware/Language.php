@@ -19,7 +19,7 @@ class Language
         if (Session::has('locale')) {
             $locale=Session::get('locale');
         }else{
-            $locale="ru";
+            $locale="uz";
         }
         
         \App::setLocale($locale);

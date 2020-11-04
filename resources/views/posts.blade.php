@@ -7,7 +7,7 @@
     
     @component('layouts.bread')
         @slot('page_img')
-           /images/news.jpg
+           /images/4.jpg
         @endslot
         @slot('page')
            

@@ -1,19 +1,12 @@
 <div class="container">
     <div class="slider__wrapper">
-      <div class="slider__item lazy main-slide--active" data-src="/images/slider2.jpg" data-bg="/images/slider2.jpg" data-slide="1">
-      
-        {{-- <h1>FERGANA</h1> --}}
-
+      <div class="slider__item lazy main-slide--active" data-src="/images/sliders/slid1.jpg" data-bg="/images/sliders/slid1.jpg" data-slide="1">
       </div>
-      <div class="slider__item lazy" data-src="/images/newfon2.jpg" data-bg="/images/newfon2.jpg" data-slide="2">
-
-        {{-- <h1>SAMARKAND</h1> --}}
+      <div class="slider__item lazy" data-src="/images/sliders/slid3.jpg" data-bg="/images/sliders/slid3.jpg" data-slide="2">
         
       </div>
-      <div class="slider__item lazy" data-src="/images/slider.jpg" data-bg="/images/slider.jpg" data-slide="3">
-        
-        {{-- <h1>TASHKENT</h1> --}}
-        
+      <div class="slider__item lazy" data-src="/images/sliders/slid4.jpg" data-bg="/images/sliders/slid4.jpg" data-slide="3">
+       
       </div>
     </div>
 </div>
@@ -23,3 +16,4 @@
     <li class="btn" data-slide="3">3</li>
 </ul>
 <div class="bg-box"></div>
+<!--<a class="info-a" href="/travel/information">  @lang('messages.travel')</a>-->

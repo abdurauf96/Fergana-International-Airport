@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-<div class="page-body">
+<div class="page-body info-body">
     @include('sections.header')
    
     @component('layouts.bread')
@@ -29,12 +29,22 @@
             </div>
             <div class="usluga__right">
                 <div class="wifi">
+                     
                     <div class="wifi__head">{{ $post->getTranslatedAttribute('title', \App::getLocale()) }}</div>
-                    <div class="wifi__text">{!! $post->getTranslatedAttribute('body', \App::getLocale()) !!}</div>
-                    @if ($post->images)
+                    @if ($post->video)
+                    <div class="about-block__item">
+                        <div class="item-video">
+                            <iframe  
+                            src="{{ $post->video }}" height="500" allowfullscreen>
+                            </iframe>
+                        </div>
+                       
+                    </div>
+                    @endif
+                    @if ($post->slider_images)
                     <div class="owl-carousel" style="float: left">
                         @php
-                            $images=json_decode($post->images)
+                            $images=json_decode($post->slider_images)
                         @endphp
                         @foreach ($images as $image)
                         <div class="img_item">
@@ -43,16 +53,20 @@
                         @endforeach
                     </div>
                     @endif
+                    <div class="wifi__text">{!! $post->getTranslatedAttribute('body', \App::getLocale()) !!}</div>
+                    
 
                     <div class="date_social">
                         <div class="post_date">
+                            <img src="/images/icons/calendar.svg" alt="">
                             <span>
-                                <i class="fa fa-clock-o" aria-hidden="true"></i> {{ $post->created_at->format('M d, Y') }}
+                                 {{ $post->created_at->format('M d, Y') }}
                             </span>
-                            <span> <i class="fa fa-eye" aria-hidden="true"></i> {{ $post->view }} </span>
+                            <img src="/images/icons/eye.svg" alt="">
+                            <span> {{ $post->view }} </span>
                         </div>
                         <div class="social_icons">
-                            <span>@lang('messages.share')</span>:
+                            <a>@lang('messages.share') : &nbsp</a>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=http://ferganaairport.uz/post/{{ $post->slug  }}">
                                 <img width="20px" height="20px" src="/images/icons/facebook.svg" alt="">
                             </a>
@@ -63,11 +77,11 @@
                                 <img width="20px" height="20px" src="/images/icons/telegram.svg" alt="">
                             </a>
                             <a href="https://twitter.com/intent/tweet?text={{ $post->getTranslatedAttribute('title', \App::getLocale()) }}&amp;url=http://ferganaairport.uz/post/"><img width="20px" height="20px" src="/images/icons/twitter.svg" alt=""></a>
-                               
-                            
                         </div>
                     </div>
-                <a class="all_news" href="/category/{{ $post->category->slug }}">@lang('messages.all')</a>
+                    
+                    <a class="all_news" href="/category/{{ $post->category->slug }}">@lang('messages.all')</a>
+                    
                 </div>
             </div>
             

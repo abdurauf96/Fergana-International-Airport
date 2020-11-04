@@ -21,24 +21,7 @@ $(document).ready(function(){
     //     console.log(data);
     // });
     
-    const elModal = document.querySelector('.layer');
-    const elCancelModal = document.querySelector('.hide-modal-btn');
-    
-    if(location.href=="https://ferganaairport.uz/"){
-      setTimeout(function(){
-        elModal.classList.add('modal--show');
-      }, 16000)
-    }
-      
-    // function showLayer(){
-    //   elModal.classList.add('modal--show');
-    // }
-    
-    // setInterval(showLayer, 300000);
-    
-    elCancelModal.addEventListener('click', () => {
-      elModal.classList.remove('modal--show');
-    });
+   
     
     $('.getReys').click(function(e){
         e.preventDefault();

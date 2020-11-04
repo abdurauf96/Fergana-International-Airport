@@ -96,6 +96,8 @@ return [
     'podpis'=>'Subscribe to our telegram channel and be informed with the latestnews',
     'podpisatsa'=>'Subscribe',
     'key'=>'keywords',
+    'travel'=>"Important information for passengers planning a travel ",
+    'manba'=>'Source:'
 ]
 
 ?>

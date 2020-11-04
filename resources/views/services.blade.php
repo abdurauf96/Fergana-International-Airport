@@ -6,7 +6,7 @@
    
     @component('layouts.bread')
         @slot('page_img')
-            /images/ser.jpg
+            /images/ser2.jpg
         @endslot
         @slot('page')
             @isset($cat)

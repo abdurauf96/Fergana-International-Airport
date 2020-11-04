@@ -40,8 +40,7 @@
                 
                 @if ($page->key=="table")
                     @include('sections.table')
-                @elseif ( ($page->key=="howtoget") || ($page->key=="transport")  )
-                    @include('sections.howto')
+                
                 @elseif ($page->key=="companies")
                     @include('sections.companies')
                @elseif ($page->key=="geokarta")

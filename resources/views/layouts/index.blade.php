@@ -18,6 +18,7 @@
     
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/my.css" />
+    <link rel="stylesheet" href="/css/mobile.css" />
     @yield('css-files')
 
     <!-- /Yandex.Metrika counter -->
@@ -41,15 +42,15 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/56139070" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <body>
 
-  <div class="layer">
-    <div class="modal-box basic-flex">
-      <button type="button" class="btn hide-modal-btn">x</button>
-      <h4>@lang('messages.podpis')</h4>
-      <div class="telegram-join basic-flex">
-        <a href="https://t.me/fegairport">@lang('messages.podpisatsa')</a>
-      </div>
-    </div>
-  </div>
+  <!--<div class="layer">-->
+  <!--  <div class="modal-box basic-flex">-->
+  <!--    <button type="button" class="btn hide-modal-btn">x</button>-->
+  <!--    <h4>@lang('messages.podpis')</h4>-->
+  <!--    <div class="telegram-join basic-flex">-->
+  <!--      <a href="https://t.me/fegairport">@lang('messages.podpisatsa')</a>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
   
     @yield('content')
 
@@ -76,10 +77,10 @@
           <div class="footer__item">
             <div class="footer__head">@lang('messages.social')</div>
             <div class="social">
-                <div class="social_item"><a href="https://www.youtube.com/channel/UC0GIF_ds7OvjP7-57DPX5yg"><img src="/images/youtube.png" alt=""></a></div>
-                <div class="social_item"><a href="https://t.me/fergana_airport"><img src="/images/telegram.png" alt=""></a></div>
-                <div class="social_item"><a href="https://www.instagram.com/fergana_airport/"><img src="/images/instagram.png" alt=""></a></div>
-                <div class="social_item"><a href="https://www.facebook.com/FerganaAirportPage/"><img src="/images/facebook.png" alt=""></a></div>
+                <div class="social_item"><a href="https://www.youtube.com/channel/UC0GIF_ds7OvjP7-57DPX5yg"><img src="/images/icons/youtube.svg" alt=""></a></div>
+                <div class="social_item"><a href="https://t.me/fegairport"><img src="/images/icons/telegram.svg" alt=""></a></div>
+                <div class="social_item"><a href="https://www.instagram.com/fergana_airport/"><img src="/images/icons/instagram.svg" alt=""></a></div>
+                <div class="social_item"><a href="https://www.facebook.com/FerganaAirportPage/"><img src="/images/icons/facebook.svg" alt=""></a></div>
             </div>
           </div>
           <div class="footer__item">
@@ -117,7 +118,9 @@
         <p class="footer__copyright">© 2020 @lang('messages.title')</p>
       </div>
     </div>
-
+    <script src="/js/main.js" ></script>
+    <script src="/src/aos.js"></script>
+    <script src="/js/jquery.lazy.min.js"></script>
     <script>
 
 
@@ -160,15 +163,20 @@
         </a>
 
     </div>
-    <script src="/js/main.js" ></script>
-    <script src="/src/aos.js"></script>
-    <script src="/js/jquery.lazy.min.js"></script>
+    
     @yield('js-files')
     <script>
       $(function() {
            AOS.init();
       });
- </script>
+    </script>
+ 
  <!--<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=a698c4afdb5ef4280e3b1ef2af5e3c4b" charset="UTF-8"></script>-->
+ <script>
+window.replainSettings = { id: '97f6e47d-13fb-45e0-8c90-f3eb295436d2' };
+(function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
+var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+})('https://widget.replain.cc/dist/client.js');
+</script>
   </body>
 </html>

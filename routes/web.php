@@ -15,15 +15,16 @@ Route::get('/lang/{locale}', function($locale){
     session(['locale'=>$locale]);
     return back();
 });
-
-
+Route::get('/travel/information', 'PageController@travel');
 
 Route::get('/cache', function(){
    \Artisan::call('config:cache');
    \Artisan::call('cache:clear');
+   \Artisan::call('route:clear');
    return back();
 });
 
+Route::get('/about-us', 'PageController@aboutUs');
 Route::get('/services/{slug?}', 'IndexController@services');
 Route::get('/faq', 'IndexController@faq');
 Route::get('/our-location', 'IndexController@location');
@@ -34,6 +35,7 @@ Route::get('/search', 'QueryController@search');
 Route::get('/page/{slug}', 'PageController@page')->name('page');
 Route::get('/transport', 'PageController@transport');
 Route::post('/message', 'PageController@message');
+
 
 Route::get('/service/{slug}', 'PageController@viewService')->name('viewService');
 Route::get('/post/{slug}', 'PageController@viewPost')->name('viewPost');
@@ -50,3 +52,5 @@ Route::get('/{locale?}', 'IndexController@index')->name('home');
 //Routes for infokiosk
 Route::get('/{locale}/services', 'PageController@services');
 Route::get('/{locale}/schedule', 'PageController@schedule');
+
+

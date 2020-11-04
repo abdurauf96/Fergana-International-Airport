@@ -65,8 +65,8 @@
   <div class="@if(\Request::route()->getName()=='home') container @endif  section__wrapper">
     @if(\Request::route()->getName()!='home') <div class="container basic-flex"> @endif
       <a class="section__logo" href="/" >
-        <span>Фергана</span>
-        <span>Международный Аэропорт</span>
+        <span>@lang('messages.fer')</span>
+        <span>@lang('messages.mejd')</span>
       </a>
       <div class="section__menu basic-flex" >
         <button class="btn navbar-btn" type="button"><img src="/images/icons/bars-solid.svg" alt="bars" width="30" height="30"></button>
@@ -79,7 +79,7 @@
           </li>
           @foreach ($menus as $item)
           <li class="topmenu__item" tab-index="0">
-            <a class="topmenu__link" href="#">{{ $item->translate(\App::getLocale())->name }} </a>
+            <a class="topmenu__link" href="{{ $item->url }}">{{ $item->translate(\App::getLocale())->name }} </a>
             <div class="megadrop">
               <ul>
                 @foreach ($item->children($item->id) as $submenu)

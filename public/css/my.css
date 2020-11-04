@@ -1,3 +1,88 @@
+.info-a{
+    border-radius: 73px;
+    display: flex;
+    color: #120a8c;
+    padding: 12px;
+    background: #f2dede;
+    width: 33%;
+    margin-top: 16px;
+    margin-left:106px;
+    text-align:center;
+}
+.about-page{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.about-block{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:15px;
+}
+.about-block__item{
+  padding: 30px 15px;
+}
+.item-video{
+  min-height: 300px;
+  
+}
+iframe{
+  min-height: 300px;
+  min-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .bg-box{
+        background-position:center center;
+    }
+    .info-a{
+    border-radius: 10px;
+    display: block;
+    color: #120a8c;
+    padding: 12px;
+    font-size:60%;
+    background: #f2dede;
+    width: 80%;
+    margin-top: 16px;
+    margin-left:35px;
+    text-align:center;
+}
+  .about-page{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .about-block{
+    display: block;
+    
+  }
+  .about-block__item{
+    
+    padding: 30px 15px;
+  }
+  .item-video{
+    min-height: 180px;
+   
+  }
+  iframe{
+    min-height: 180px;
+    max-width: 100%;
+  }
+}
+
+
+
+@media only screen and (max-width: 900px) {
+  .about-page{
+   display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+}
+
+
+
+
+
+
 .table img{
     max-width: 60px;
     margin-left: 20px;
@@ -18,7 +103,6 @@
   .timetable {
     margin-top: 15px;
   }
-  
   
   
   .modal {
@@ -46,12 +130,38 @@
   body.loading .modal {
     display: block;
   }
-
+  
+.post_date img{
+    max-width:15px;
+    margin:20px;
+}
+.post_date{
+    display: -webkit-inline-box;    
+}
   .social_icons{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     
   }
   .social_icons span{
     padding-right: 0;
   }
+  .owl-carousel{
+      max-width:780px;
+      margin-left:unset;
+      margin-top:20px;
+  }
+  .wifi{
+      display:grid;     
+     
+  }
+  .wifi .slick-slide img {
+    display: block;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 400px;
+    min-height: 400px;
+}
+.all_news{
+    color: #004a79;
+}

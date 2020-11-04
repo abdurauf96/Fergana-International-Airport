@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         
         view()->composer('sections.header', function($view){
             $menus=\App\SiteMenu::withTranslation(\App::getLocale())
-            ->whereNull('parent_id')->get();
+            ->whereNull('parent_id')->orderBy('order', 'asc')->get();
             $view->with(compact('menus'));
         });
         

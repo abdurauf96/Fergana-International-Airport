@@ -17,7 +17,27 @@ class PageController extends Controller
         
         return view('services', compact('services'));
     }
-
+        
+    public function travel()
+    {
+        
+        
+        $rules=\App\Rule::all();
+        
+        return view('travel', compact('rules'));
+    }
+    
+    public function aboutUs()
+    {
+        $pages=\App\Page::where('category','airport')
+        ->withTranslation(\App::getLocale())
+        ->orderBy('order')
+        ->get();
+        $videos=\App\Clip::latest()->get();
+        
+        return view('aboutUs', compact('pages', 'videos'));
+    }
+    
     public function schedule($locale)
     {
         \App::setLocale($locale);
@@ -85,7 +105,7 @@ class PageController extends Controller
     public function posts(Request $request)
     {
         $category=\App\Category::where('slug', $request->slug)->first();
-
+        
         $posts=Post::withTranslation(\App::getLocale())
         ->where('category_id', $category->id)
         ->latest()
