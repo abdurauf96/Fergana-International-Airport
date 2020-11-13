@@ -1,9 +1,8 @@
 @extends('layouts.index')
 
 @section('css-files')
-  
-@endsection
 
+@endsection
 
 
 @section('content')
@@ -21,6 +20,9 @@
 @endsection
 
 @section('js-files')
+
+  
+    
   <script>
     $(document).ready(function(){
 
@@ -71,5 +73,61 @@
       $('.lazy').lazy();
     })
     
+    $(".cip_btn").click(function(){
+        $(".modal-cip").addClass("form-modal--active");
+        $("body").css("overflow-y","hidden");
+      })
+
+      $(".privacy_btn").click(function(){
+        $(".modal-privacy").addClass("form-modal--active");
+        $("body").css("overflow-y","hidden");
+      })
+
+      $('.cip_order').prop("disabled", "true");
+      $('.privacy').click(function() {
+        if ($(this).is(':checked')) {
+          $('.cip_order').prop("disabled", false);
+          $('.cip_order').removeClass('cip_btn_disabled');
+        } else {
+          $('.cip_order').attr('disabled',true);
+          $('.cip_order').addClass('cip_btn_disabled');
+
+        }
+      });
+
+      $('.close-privacy[data-dismiss="modal"]').click(function(){$(".modal-privacy").removeClass("form-modal--active"),$("body").css("overflow-y","auto")});
+      $('.cip_order').on('click', function (e) {
+        
+        e.preventDefault();
+        
+        var date=$(this).siblings('.date').val();
+        var name=$(this).siblings('.name').val();
+        var phone=$(this).siblings('.phone').val();
+        var reys_num=$(this).siblings('.reys_num').val();
+        $('.otprovlen').css('display', 'flex');
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
+            url: '/cip-order',
+            data: {date:date, name:name, phone:phone,reys_num:reys_num},
+            success: function (data) {
+                
+               
+                
+            },
+            error:function(err){
+              console.log(err);
+            }
+        });
+      });
+
+      $('.otprovlen__link').click(function(e){
+        $('.otprovlen').css('display', 'none');
+        $('.form-modal').removeClass("form-modal--active");
+        $("body").css("overflow-y","auto");
+      })
+
   </script>
 @endsection

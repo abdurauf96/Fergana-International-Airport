@@ -15,11 +15,12 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/my.css" />
-    <link rel="stylesheet" href="/css/mobile.css" />
     @yield('css-files')
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/mobile.css" />
+    <link rel="stylesheet" href="/css/my.css" />
+    
+    
 
     <!-- /Yandex.Metrika counter -->
     <meta name="yandex-verification" content="f763e6c40f67061e" />
@@ -42,15 +43,15 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/56139070" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <body>
 
-  <!--<div class="layer">-->
-  <!--  <div class="modal-box basic-flex">-->
-  <!--    <button type="button" class="btn hide-modal-btn">x</button>-->
-  <!--    <h4>@lang('messages.podpis')</h4>-->
-  <!--    <div class="telegram-join basic-flex">-->
-  <!--      <a href="https://t.me/fegairport">@lang('messages.podpisatsa')</a>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--</div>-->
+  {{-- <div class="layer" style="display: block">
+  <div class="modal-box basic-flex">
+  <button type="button" class="btn hide-modal-btn">x</button>
+  <h4>@lang('messages.podpis')</h4>
+  <div class="telegram-join basic-flex">
+  <a href="https://t.me/fegairport">@lang('messages.podpisatsa')</a>
+  </div>
+  </div>
+  </div> --}}
   
     @yield('content')
 
@@ -86,7 +87,7 @@
           <div class="footer__item">
             <div class="footer__head">@lang('messages.contact')</div>
             <button class="footer__otziv" type="button" data-toggle="modal" data-target="#modelId">@lang('messages.ostavit')</button>
-            <div class="form-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="form-modal modal-otziv" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -118,32 +119,64 @@
         <p class="footer__copyright">© 2020 @lang('messages.title')</p>
       </div>
     </div>
-    <script src="/js/main.js" ></script>
-    <script src="/src/aos.js"></script>
-    <script src="/js/jquery.lazy.min.js"></script>
-    <script>
+    
+    <div class="fluid otprovlen otziv_success" style="display: none;">
+      <div class="container otprovlen__wrapper">
+        <div class="otprovlen__head">Rahmat. Murojaatingiz qabul qilindi!</div>
+        <div class="otprovlen__desc">Ko'rib chiqamiz va tez orada sizga xabar qilamiz!)</div>
+        <a class="btn otprovlen__link " href="#">OK</a>
+      </div>
+    </div>
 
+    {{-- CIP MODAL --}}
+    <div class="form-modal modal-cip" id="CIPmodal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title"> CIP zalidan foydalaning va komfortni his eting</p> Iltimos so'ralgan ma'lumotlarni taqdim eting!
+            </div>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4></h4>
+          </div>
+          <div class="modal-body">
+            <form class="mymodal__form cip_form" method="POST" action="#">
+              @csrf
+              <input required class="form-control date" type="date" name="date" placeholder=""/>
+              <input required class="form-control name" type="text" name="name" placeholder="FIO..."/>
+              <input required class="form-control phone" type="text" name="phone" placeholder="Telefon raqamingiz..."/>
+              <input required class="form-control reys_num" type="text" name="reys_number" placeholder="Reys raqami..."/>
+              <span>CIP <a style="text-decoration:underline" class="privacy_btn" data-toggle="modal" data-target="#privacyModal" href="#"> qoidalar</a>iga rozilik bildirasizmi ? 
+                <input required class="form-control privacy" type="checkbox" name="privacy"/> </span>
+              <input class="form-control cip_btn cip_order cip_btn_disabled" type="submit" disabled value="Buyurtma qilmoq"/>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- END CIP MODAL --}}
 
-      //Get the button
-      var mybutton = document.getElementById("myBtn");
+    {{-- PRIVACY MODAL --}}
+    <div class="form-modal modal-privacy" id="" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title"> CIP zalidan foydalaning va komfortni his eting</p> Iltimos CIP qoidalar bilan tanishib chiqing
+            </div>
+            
+            <button class="close-privacy" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4></h4>
+          </div>
+          <div class="modal-body">
+            <p>CIP zalidan foydalanish narxlari:</p>
+            <p>-xalqaro reys uchun 110 000 so'm</p>
+            <p>-mahalliy qatnovlar uchun 45 000 so'm</p>
+            <p>(bronlash bepul)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- END PRIVACY MODAL --}}
 
-      // When the user scrolls down 20px from the top of the document, show the button
-      window.onscroll = function() {scrollFunction()};
-
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-
-      // When the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-      </script>
     <div class="fixed__icon">
 
         <a href="/page/raspisanie-rejsov" class="btn" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.table')">
@@ -164,13 +197,39 @@
 
     </div>
     
+    <script src="/js/main.js" ></script>
+    <script src="/src/aos.js"></script>
+    <script src="/js/jquery.lazy.min.js"></script>
     @yield('js-files')
+    
     <script>
       $(function() {
            AOS.init();
       });
     </script>
- 
+ <script>
+
+
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
  <!--<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=a698c4afdb5ef4280e3b1ef2af5e3c4b" charset="UTF-8"></script>-->
  <script>
 window.replainSettings = { id: '97f6e47d-13fb-45e0-8c90-f3eb295436d2' };

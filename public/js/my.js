@@ -1,4 +1,4 @@
-$(document).ready(function(){
+ $(document).ready(function(){
         fetch('https://api.openweathermap.org/data/2.5/weather?q=Fergana&appid=0e695f70b4fc658773b511d44b35cc79')
     .then(response => response.json())
     .then( function(data){
@@ -23,6 +23,9 @@ $(document).ready(function(){
     
    
     
+
+
+    
     $('.getReys').click(function(e){
         e.preventDefault();
         $(this).addClass('tablo__active2');
@@ -42,7 +45,7 @@ $(document).ready(function(){
     })
     
     
-
+    
       
 
 // $('.more').click(function(e){

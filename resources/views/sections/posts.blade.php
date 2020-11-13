@@ -12,7 +12,7 @@
         <div class="news__main" >
           @foreach ($news as $post)
           <div class="news__item">
-            <img class="news__item--img" src="{{ Voyager::image($post->thumbnail('medium')) }}" alt="alt"/>
+            <img class="news__item--img" src="{{ Voyager::image($post->image) }}" alt="alt"/>
             <div class="news__item--date"> {{ $post->created_at->format('M d, Y') }}</div>
             <div class="news__item--block">
               <a href="{{ route('viewPost', $post->slug) }}">

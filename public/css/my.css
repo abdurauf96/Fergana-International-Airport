@@ -79,10 +79,6 @@ iframe{
 }
 
 
-
-
-
-
 .table img{
     max-width: 60px;
     margin-left: 20px;
@@ -159,9 +155,199 @@ iframe{
     display: block;
     max-width: 100%;
     min-width: 100%;
-    max-height: 400px;
-    min-height: 400px;
+    max-height: 400px;   
+    min-height: 450px;
 }
 .all_news{
     color: #004a79;
+}
+
+.topmenu__item .topmenu__link{
+  font-size: 14px;
+  padding: 5px 7px;
+}
+.slid-blok{
+    width: 600px;
+    position: absolute;
+     right: 923px;
+    bottom: 312px; 
+    float: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    border: none;
+    border-radius: 1rem;
+    padding: 4rem 7rem 5rem 3.5rem;
+    /* background-color: red; */
+}
+.slid-blok hr{
+  
+
+  height: 5px;
+  background-color: #F6DC2E;
+  width: 10rem;
+  margin-left: 0;
+  border: none;
+  margin-bottom: 50px;
+}
+
+        
+
+.cip_title{
+  color: #f2bc00;
+  font-size: 15pt;
+  text-transform: uppercase;
+}
+.mymodal__form input[type="submit"], .cip_btn{
+  width: 100%;
+  letter-spacing: 1px;
+  border-radius: 7px;
+  -webkit-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
+  border: none;
+}
+.mymodal__form input[type="submit"]:hover, .cip_btn:hover{
+  background-color: #8222da;
+}
+
+.cip_btn_disabled{
+  background-color: #f2be0067!important;
+  cursor: none!important;
+}
+
+.fluid{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.otprovlen{
+  position: fixed;
+  z-index: 1000000000000000000000000000000000000;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: none;
+  top: 0;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 10rem;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  
+  
+}
+.otprovlen__wrapper {
+  max-width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2rem 4rem;
+  background: white url(../images/success_fon.png) no-repeat;
+}
+
+.otprovlen__link {
+  background-color: #FFC424;
+  margin-top: 2rem;
+  max-width: 80%;
+  min-width: 80%;
+  color: black;
+  font-size: 1.2rem;
+  font-family: "OS_B";
+  
+  border-radius: 1rem;
+  line-height: 2rem;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  text-align: center;
+}
+.otprovlen__head{
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1380px) {
+  .slid-blok{
+    right: 500px;
+    bottom: 150px; 
+  }
+  .topmenu__item .topmenu__link{
+      font-size:13px;
+  }
+  .section__logo span {
+      font-size:18px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .slid-blok{
+   
+     right: 150px;
+      bottom: 312px; 
+    
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .slid-blok{
+    width: 300px;
+    position: absolute;
+     bottom: 30px;
+    right: 20px;
+    float: left;
+
+    border-radius: 1rem;
+    padding: 1rem;
+    /* background-color: red; */
+  }
+  .footer__otziv{
+    line-height: 16px;
+  }
+.slid-blok hr{
+  
+
+  height: 5px;
+  background-color: #F6DC2E;
+  width: 10rem;
+  margin-left: 0;
+  border: none;
+  margin-bottom: 50px;
+}
+
+        
+
+.cip_title{
+  color: #f2bc00;
+  font-size: 15pt;
+  text-transform: uppercase;
+}
+.mymodal__form input[type="submit"], .cip_btn{
+  width: 100%;
+  letter-spacing: 1px;
+  border-radius: 7px;
+  -webkit-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
+  border: none;
+}
+  
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Flight;
 use App\Post;
 use App\Service;
-
+use Illuminate\Support\Facades\Mail;
 class QueryController extends Controller
 {
     public function getReys()
@@ -51,5 +51,38 @@ class QueryController extends Controller
         ->get();
         $q=$request->q;
         return view('search', compact('posts', 'services', 'q'));
+    }
+
+    public function cipOrder()
+    {
+        
+        $date=$_POST['date'];
+        $name=$_POST['name'];
+        $phone=$_POST['phone'];
+        $reys_num=$_POST['reys_num'];
+
+        $msg=array('name'=>$name, 'date'=>$date, 'phone'=>$phone, 'reys_num'=>$reys_num);
+       
+        $message=<<<TEXT
+        Buyurtma qoldirildi!
+        
+        Sana: {$date}
+        Ismi: {$name}
+        Telefon nomeri: {$phone} 
+        Reys nomeri: {$reys_num}
+TEXT;
+
+        $apiToken = "768420781:AAEzzh0nDnr3o067TNOBnafxm1QTe4fbilo";
+        $data = [
+            'chat_id' => '-1001401093651',
+            'text' => $message
+        ];
+        $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" . http_build_query($data) );
+
+        Mail::to('saydaliyevabdurauf@gmail.com')->send(new \App\Mail\Cip($msg));
+        //Mail::to('fergana0888@gmail.com')->send(new \App\Mail\Cip($msg));
+        Mail::to('ferganagit@uzbairports.uz')->send(new \App\Mail\Cip($msg));
+        //Mail::to('sop.feg@uzbairports.uz')->send(new \App\Mail\Cip($msg));
+       
     }
 }
