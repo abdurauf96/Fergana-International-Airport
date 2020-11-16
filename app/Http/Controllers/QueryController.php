@@ -64,12 +64,41 @@ class QueryController extends Controller
         $msg=array('name'=>$name, 'date'=>$date, 'phone'=>$phone, 'reys_num'=>$reys_num);
        
         $message=<<<TEXT
-        Buyurtma qoldirildi!
+        CIP zal uchun buyurtma qoldirildi!
         
         Sana: {$date}
         Ismi: {$name}
         Telefon nomeri: {$phone} 
         Reys nomeri: {$reys_num}
+TEXT;
+
+        $apiToken = "768420781:AAEzzh0nDnr3o067TNOBnafxm1QTe4fbilo";
+        $data = [
+            'chat_id' => '-1001401093651',
+            'text' => $message
+        ];
+        $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" . http_build_query($data) );
+
+        Mail::to('saydaliyevabdurauf@gmail.com')->send(new \App\Mail\Cip($msg));
+        //Mail::to('fergana0888@gmail.com')->send(new \App\Mail\Cip($msg));
+        Mail::to('ferganagit@uzbairports.uz')->send(new \App\Mail\Cip($msg));
+        //Mail::to('sop.feg@uzbairports.uz')->send(new \App\Mail\Cip($msg));
+       
+    }
+
+    public function xolodOrder()
+    {
+        
+        $name=$_POST['name'];
+        $phone=$_POST['phone'];
+
+        $msg=array('name'=>$name, 'phone'=>$phone);
+       
+        $message=<<<TEXT
+        Muzlatgich uchun murojat qoldirildi!
+         
+        Ismi: {$name}
+        Telefon nomeri: {$phone} 
 TEXT;
 
         $apiToken = "768420781:AAEzzh0nDnr3o067TNOBnafxm1QTe4fbilo";

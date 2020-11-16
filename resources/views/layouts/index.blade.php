@@ -147,6 +147,7 @@
               <input required class="form-control reys_num" type="text" name="reys_number" placeholder="Reys raqami..."/>
               <span>CIP <a style="text-decoration:underline" class="privacy_btn" data-toggle="modal" data-target="#privacyModal" href="#"> qoidalar</a>iga rozilik bildirasizmi ? 
                 <input required class="form-control privacy" type="checkbox" name="privacy"/> </span>
+                <label class="field_req" for="">Iltimos barcha maydonlarni to'ldiring!</label>
               <input class="form-control cip_btn cip_order cip_btn_disabled" type="submit" disabled value="Buyurtma qilmoq"/>
             </form>
           </div>
@@ -176,6 +177,31 @@
       </div>
     </div>
     {{-- END PRIVACY MODAL --}}
+
+    {{-- XOLODILNIK MODAL --}}
+    <div class="form-modal modal-xolod" id="xolodmodal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title">Aeroportimiz xududida sig'imi 120 tonnagacha bo'lgan qishloq xo'jalik mahsulotlarini saqlashga mo'ljallangan muzlatgich mavjud</p>
+              Batafsil bilmoqchimisiz? U xolda ism sharifingiz va raqamingizni qoldiring, biz siz bilan bog'lanamiz!
+            </div>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4></h4>
+          </div>
+          <div class="modal-body">
+            <form class="mymodal__form cip_form" method="POST" action="/xolod-order">
+              @csrf
+              <input required class="form-control name" type="text" name="name" placeholder="FIO..."/>
+              <input required class="form-control phone" type="text" name="phone" placeholder="Telefon raqamingiz..."/>
+              <label class="field_req" for="">Iltimos barcha maydonlarni to'ldiring!</label>
+              <input class="form-control cip_btn xolod_order " type="submit"  value="Jo'natmoq"/>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- XOLODILNIK MODAL --}}
 
     <div class="fixed__icon">
 

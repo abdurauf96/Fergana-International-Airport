@@ -12,9 +12,9 @@
       </div>
       <div class="slider__item lazy" data-src="/images/sliders/slid3.jpg" data-bg="/images/sliders/slid3.jpg" data-slide="2">
         <div class="slid-blok">
-          <p>CIP zalidan joy buyurtma qiling</p>
+          <p>120 tonnalik muzlatgich siz uchun !</p>
           <hr>
-          <button class="footer__otziv cip_btn" type="button" data-toggle="modal" data-target="#CIPmodal">Buyurtma qilmoq</button>
+          <button class="footer__otziv xolod_btn" type="button" data-toggle="modal" data-target="#xolodmodal">Batafsil bilmoq</button>
         </div>
       </div>
       <div class="slider__item lazy" data-src="/images/sliders/slid4.jpg" data-bg="/images/sliders/slid4.jpg" data-slide="3">

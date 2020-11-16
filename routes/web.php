@@ -44,6 +44,7 @@ Route::get('/post/{slug}', 'PageController@viewPost')->name('viewPost');
 Route::post('/get-reys', 'QueryController@getReys');
 Route::post('/get-post', 'QueryController@getPost');
 Route::post('/cip-order', 'QueryController@cipOrder');
+Route::post('/xolod-order', 'QueryController@xolodOrder');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

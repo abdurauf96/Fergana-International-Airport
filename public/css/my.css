@@ -281,7 +281,12 @@ iframe{
 .otprovlen__head{
   font-weight: bold;
 }
-
+.field_req{
+  color: red;
+  display: none;
+  text-align: center;
+  margin-bottom: 10px;
+}
 @media only screen and (max-width: 1380px) {
   .slid-blok{
     right: 500px;
