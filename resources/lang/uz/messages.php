@@ -98,5 +98,27 @@ return [
     'podpisatsa'=>'Obuna boвЂ™lish',
     'key'=>'kalit so`z',
     'travel'=>"Sayohat qilishni rejalashtirgan yo'lovchilar uchun muhim ma'lumot",
-    'manba'=>'Manba:'
+    'manba'=>'Manba:',
+
+    //cip form
+    'sps'=>'Rahmat. Murojatingiz qabul qilindi!',
+    'sps_desc'=>"Ko'rib chiqamiz va tez orada sizga xabar qilamiz!)",
+    'cip_title'=>"CIP zalidan foydalaning va komfortni his eting",
+    'cip_desc'=>"Iltimos so'ralgan ma'lumotlarni taqdim eting!",
+    'req_title'=>"Iltimos barcha maydonlarni to'ldiring!",
+    'zakazat'=>"Buyurtma qilmoq",
+    'rules'=>"Iltimos CIP qoidalar bilan tanishib chiqing",
+    'cip_rules'=>"<p>CIP zalidan foydalanish narxlari:</p>
+    <p>-xalqaro reys uchun 110 000 so'm</p>
+    <p>-mahalliy qatnovlar uchun 45 000 so'm</p>
+    <p>(bronlash bepul, xizmat ko'rsatilgandan so'ng parvozdan qat'iy nazar pul qaytarilmaydi)</p>",
+    'xolod_title'=>"Aeroportimiz hududida sig'imi 120 tonnagacha bo'lgan qishloq xo'jalik mahsulotlarini saqlashga mo'ljallangan muzlatgich mavjud",
+    'xolod_desc'=>"Batafsil bilmoqchimisiz? U xolda ism sharifingiz va raqamingizni qoldiring, biz siz bilan bog'lanamiz!",
+    'otpravit'=>"Jo'natmoq",
+    'cip_btn'=>"Siz uchun qulaylik! CIP zalidan joy buyurtma qiling",
+    'xolod_btn'=>"Bilasizmi!? 120 tonnalik muzlatgich mavjud",
+    'terms'=>' CIP <a style="text-decoration:underline" class="privacy_btn" data-toggle="modal" data-target="#privacyModal" href="#"> qoidalar</a>iga rozilik bildirasizmi ?',
+    'fio'=>'F.I.O...',
+    'tel'=>'Telefon raqamingiz...',
+    'reys_num'=>'Reys raqami...',
     ];

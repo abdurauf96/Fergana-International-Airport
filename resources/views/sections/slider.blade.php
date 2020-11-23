@@ -2,9 +2,9 @@
     <div class="slider__wrapper">
       <div class="slider__item lazy main-slide--active" data-src="/images/sliders/slid1.jpg" data-bg="/images/sliders/slid1.jpg" data-slide="1">
         <div class="slid-blok">
-          <p>CIP zalidan joy buyurtma qiling</p>
+          <p>@lang('messages.cip_btn')</p>
           <hr>
-          <button class="footer__otziv cip_btn" type="button" data-toggle="modal" data-target="#CIPmodal">Buyurtma qilmoq</button>
+          <button class="footer__otziv cip_btn" type="button" data-toggle="modal" data-target="#CIPmodal">@lang('messages.zakazat')</button>
           
         </div>
           
@@ -12,16 +12,16 @@
       </div>
       <div class="slider__item lazy" data-src="/images/sliders/slid3.jpg" data-bg="/images/sliders/slid3.jpg" data-slide="2">
         <div class="slid-blok">
-          <p>120 tonnalik muzlatgich siz uchun !</p>
+          <p>@lang('messages.xolod_btn')</p>
           <hr>
-          <button class="footer__otziv xolod_btn" type="button" data-toggle="modal" data-target="#xolodmodal">Batafsil bilmoq</button>
+          <button class="footer__otziv xolod_btn" type="button" data-toggle="modal" data-target="#xolodmodal">@lang('messages.more')</button>
         </div>
       </div>
       <div class="slider__item lazy" data-src="/images/sliders/slid4.jpg" data-bg="/images/sliders/slid4.jpg" data-slide="3">
         <div class="slid-blok">
-          <p>CIP zalidan joy buyurtma qiling</p>
+          <p>@lang('messages.cip_btn')</p>
           <hr>
-          <button class="footer__otziv cip_btn" type="button" data-toggle="modal" data-target="#CIPmodal">Buyurtma qilmoq</button>
+          <button class="footer__otziv cip_btn" type="button" data-toggle="modal" data-target="#CIPmodal">@lang('messages.zakazat')</button>
         </div>
       </div>
     </div>

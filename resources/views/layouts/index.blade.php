@@ -55,7 +55,7 @@
   
     @yield('content')
 
-    <img onclick="topFunction()" title="Вверх" id="myBtn" src="/images/top.png" alt="">
+    <img onclick="topFunction()" title="Вверх" id="myBtn" src="/images/icons/top.png" alt="">
     <footer class="container-fluid footer">
       <div class="container bottom__wrapper">
         <div class="bottom__head">@lang('messages.title')</div>
@@ -122,8 +122,8 @@
     
     <div class="fluid otprovlen otziv_success" style="display: none;">
       <div class="container otprovlen__wrapper">
-        <div class="otprovlen__head">Rahmat. Murojaatingiz qabul qilindi!</div>
-        <div class="otprovlen__desc">Ko'rib chiqamiz va tez orada sizga xabar qilamiz!)</div>
+        <div class="otprovlen__head">@lang('messages.sps')</div>
+        <div class="otprovlen__desc">@lang('messages.sps_desc')</div>
         <a class="btn otprovlen__link " href="#">OK</a>
       </div>
     </div>
@@ -133,7 +133,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title"> CIP zalidan foydalaning va komfortni his eting</p> Iltimos so'ralgan ma'lumotlarni taqdim eting!
+            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title"> @lang('messages.cip_title')</p> @lang('messages.cip_desc')
             </div>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4></h4>
@@ -142,13 +142,14 @@
             <form class="mymodal__form cip_form" method="POST" action="#">
               @csrf
               <input required class="form-control date" type="date" name="date" placeholder=""/>
-              <input required class="form-control name" type="text" name="name" placeholder="FIO..."/>
-              <input required class="form-control phone" type="text" name="phone" placeholder="Telefon raqamingiz..."/>
-              <input required class="form-control reys_num" type="text" name="reys_number" placeholder="Reys raqami..."/>
-              <span>CIP <a style="text-decoration:underline" class="privacy_btn" data-toggle="modal" data-target="#privacyModal" href="#"> qoidalar</a>iga rozilik bildirasizmi ? 
+              <input required class="form-control name" type="text" name="name" placeholder="@lang('messages.fio')"/>
+              <input required class="form-control phone" type="text" name="phone" placeholder="@lang('messages.tel')"/>
+              <input required class="form-control reys_num" type="text" name="reys_number" placeholder="@lang('messages.reys_num')"/>
+              <span>
+               @lang('messages.terms') 
                 <input required class="form-control privacy" type="checkbox" name="privacy"/> </span>
-                <label class="field_req" for="">Iltimos barcha maydonlarni to'ldiring!</label>
-              <input class="form-control cip_btn cip_order cip_btn_disabled" type="submit" disabled value="Buyurtma qilmoq"/>
+                <label class="field_req" for="">@lang('messages.req_title')</label>
+              <input class="form-control cip_btn cip_order cip_btn_disabled" type="submit" disabled value="@lang('messages.zakazat')"/>
             </form>
           </div>
         </div>
@@ -161,17 +162,14 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title"> CIP zalidan foydalaning va komfortni his eting</p> Iltimos CIP qoidalar bilan tanishib chiqing
+            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title"> @lang('messages.cip_title')</p> @lang('messages.rules')
             </div>
             
             <button class="close-privacy" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4></h4>
           </div>
           <div class="modal-body">
-            <p>CIP zalidan foydalanish narxlari:</p>
-            <p>-xalqaro reys uchun 110 000 so'm</p>
-            <p>-mahalliy qatnovlar uchun 45 000 so'm</p>
-            <p>(bronlash bepul)</p>
+            @lang('messages.cip_rules')
           </div>
         </div>
       </div>
@@ -183,8 +181,8 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title">Aeroportimiz xududida sig'imi 120 tonnagacha bo'lgan qishloq xo'jalik mahsulotlarini saqlashga mo'ljallangan muzlatgich mavjud</p>
-              Batafsil bilmoqchimisiz? U xolda ism sharifingiz va raqamingizni qoldiring, biz siz bilan bog'lanamiz!
+            <div class="mymodal__head" id="modelTitleId"> <p class="cip_title">@lang('messages.xolod_title')</p>
+              @lang('messages.xolod_desc')
             </div>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4></h4>
@@ -192,10 +190,10 @@
           <div class="modal-body">
             <form class="mymodal__form cip_form" method="POST" action="/xolod-order">
               @csrf
-              <input required class="form-control name" type="text" name="name" placeholder="FIO..."/>
-              <input required class="form-control phone" type="text" name="phone" placeholder="Telefon raqamingiz..."/>
-              <label class="field_req" for="">Iltimos barcha maydonlarni to'ldiring!</label>
-              <input class="form-control cip_btn xolod_order " type="submit"  value="Jo'natmoq"/>
+              <input required class="form-control name" type="text" name="name" placeholder="@lang('messages.fio')"/>
+              <input required class="form-control phone" type="text" name="phone" placeholder="@lang('messages.tel')"/>
+              <label class="field_req" for="">@lang('messages.req_title')</label>
+              <input class="form-control cip_btn xolod_order " type="submit"  value="@lang('messages.otpravit')"/>
             </form>
           </div>
         </div>
@@ -206,19 +204,19 @@
     <div class="fixed__icon">
 
         <a href="/page/raspisanie-rejsov" class="btn" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.table')">
-          <img src="/images/icons/table-solid.svg">
+          <img src="/images/icons/table.png">
         </a>
         <a href="/page/geografiya-poletov"  class="btn " class="red-tooltip" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.geo')">
-          <img src="/images/icons/globe-asia-solid.svg">
+          <img src="/images/icons/earth.png">
         </a>
         <a  href="/faq" class="btn" data-toggle="tooltip" data-placement="left" data-title="FAQ">
-          <img src="/images/icons/question-solid.svg">
+          <img src="/images/icons/faq.png">
         </a>
         <a  href="/page/kak-dobrat-sya" class="btn" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.how')">
-          <img src="/images/icons/bus-solid.svg">
+          <img src="/images/icons/bus.png">
         </a>
         <a  href="/our-location" class="btn" data-toggle="tooltip" data-placement="left" data-title="@lang('messages.location')">
-          <img src="/images/icons/map-solid.svg">
+          <img src="/images/icons/locat.png">
         </a>
 
     </div>

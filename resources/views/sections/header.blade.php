@@ -74,9 +74,7 @@
         <!-- top menu -->
         <ul class="topmenu basic-flex" >
           <li class="close-menu-btn"></li>
-          <li class="topmenu__item @if(\Request::route()->getName()=='home') top__menu--active @endif ">
-            <a class="topmenu__link" href="/">@lang('messages.home')</a>
-          </li>
+          
           @foreach ($menus as $item)
           <li class="topmenu__item" tab-index="0">
             <a class="topmenu__link" href="{{ $item->url }}">{{ $item->translate(\App::getLocale())->name }} </a>

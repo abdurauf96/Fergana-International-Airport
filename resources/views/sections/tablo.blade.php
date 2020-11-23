@@ -6,7 +6,7 @@
     data-aos-anchor-placement="bottom-bottom">
 
       <div class="tablo__block">
-        <button class="tablo__item tablo__active">@lang('messages.onlayn_tab')</button>
+        <button class="tablo__item ">@lang('messages.onlayn_tab')</button>
         <a class="tablo__item tablo__active2 getReys" data-key="arrival" href="#">
           <img src="images/arrival.png" alt="samalyot" /><span>@lang('messages.prilet')</span>
         </a>

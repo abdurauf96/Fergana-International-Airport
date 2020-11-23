@@ -10,11 +10,16 @@
   @include('sections.header')
   @include('sections.slider')
 </div>    
-    
-  @include('sections.tablo')
-  @include('sections.services')
-  @include('sections.posts')
-  @include('sections.partners')
+    <div style="background: url(../images/bg4.jpg) no-repeat right center;
+    background-size: cover;">
+      @include('sections.tablo')
+      @include('sections.services')
+      
+      @include('sections.posts')
+      @include('sections.partners')
+    </div>
+  
+  
     
   <div class="modal"><!-- Place at bottom of page --></div>
 @endsection

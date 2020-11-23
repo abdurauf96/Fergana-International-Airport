@@ -89,11 +89,11 @@ iframe{
   }
   
   .usluga__list--link:hover{
-    background-color: #004a79c7;
+    background-color: #74005f;
     color: white;
   }
   .sidebar_active{
-    background-color: #004a79c7;
+    background-color: #823a81;
     color: white;
   }
   .timetable {
@@ -158,13 +158,11 @@ iframe{
     max-height: 400px;   
     min-height: 450px;
 }
-.all_news{
-    color: #004a79;
-}
 
 .topmenu__item .topmenu__link{
-  font-size: 14px;
+  font-size: 13px;
   padding: 5px 7px;
+  text-transform: uppercase;
 }
 .slid-blok{
     width: 600px;
@@ -183,7 +181,7 @@ iframe{
   
 
   height: 5px;
-  background-color: #F6DC2E;
+  background-color: #eee;
   width: 10rem;
   margin-left: 0;
   border: none;
@@ -193,7 +191,7 @@ iframe{
         
 
 .cip_title{
-  color: #f2bc00;
+  color: #74005f;
   font-size: 15pt;
   text-transform: uppercase;
 }
@@ -207,13 +205,16 @@ iframe{
   transform-style: preserve-3d;
   transition: all 0.7s ease;
   border: none;
+  
 }
-.mymodal__form input[type="submit"]:hover, .cip_btn:hover{
-  background-color: #8222da;
+.mymodal__form input[type="submit"]:hover{
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  background-color: #74005f;
 }
 
 .cip_btn_disabled{
-  background-color: #f2be0067!important;
+  background-color: #74005f49!important;
   cursor: none!important;
 }
 
@@ -287,6 +288,15 @@ iframe{
   text-align: center;
   margin-bottom: 10px;
 }
+.mytable__head{
+  background:none
+}
+.phone-wrapper img{
+  max-width: 30px;
+}
+.xolod_btn{
+  width: 100%;
+}
 @media only screen and (max-width: 1380px) {
   .slid-blok{
     right: 500px;
@@ -326,13 +336,9 @@ iframe{
     line-height: 16px;
   }
 .slid-blok hr{
-  
-
   height: 5px;
-  background-color: #F6DC2E;
   width: 10rem;
   margin-left: 0;
-  border: none;
   margin-bottom: 50px;
 }
 

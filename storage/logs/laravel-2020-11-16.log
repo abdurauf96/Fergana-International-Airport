@@ -78,3 +78,4 @@
 #75 E:\\OSPanel\\domains\\airport\\server.php(21): require_once('E:\\\\OSPanel\\\\doma...')
 #76 {main}
 "} 
+[2020-11-16 15:44:13] local.ERROR: No Database connection yet in VoyagerServiceProvider loadAuth()  
