@@ -114,9 +114,15 @@ return [
     'xolod_title'=>"On the territory of our airport there is a refrigerator with a capacity of 120 tons for storing agricultural products",
     'xolod_desc'=>"Want to know more? In this case, please provide us with your full name. and leave your phone number and we will contact you!",
     'otpravit'=>"Send",
-    'cip_btn'=>"Convenience for you! Book a seat in the CIP room",
-    'xolod_btn'=>"Refrigerator service with a capacity of 120 tons",
+    'cip_btn'=>"Convenience for you!",
+    'cip_btn_desc'=>"Convenience for you! Book a seat in the CIP room",
+    'xolod_btn'=>"Do you know !?",
+    'xolod_btn_desc'=>"Refrigerator service with a capacity of 120 tons",
     'terms'=>'Are you in compliance with the <a style="text-decoration:underline" class="privacy_btn" data-toggle="modal" data-target="#privacyModal" href="#"> CIP rules?  </a>',
+    'fio'=>'Full Name...',
+    'tel'=>'Phone Number...',
+    'reys_num'=>'Flight number...',
+    'date'=>'Choose date...',
 ]
 
 ?>

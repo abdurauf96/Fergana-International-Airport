@@ -141,7 +141,7 @@
           <div class="modal-body">
             <form class="mymodal__form cip_form" method="POST" action="#">
               @csrf
-              <input required class="form-control date" type="date" name="date" placeholder=""/>
+              <input placeholder="@lang('messages.date')" required class="form-control date" type="text" name="date" onfocus="(this.type='date')" />
               <input required class="form-control name" type="text" name="name" placeholder="@lang('messages.fio')"/>
               <input required class="form-control phone" type="text" name="phone" placeholder="@lang('messages.tel')"/>
               <input required class="form-control reys_num" type="text" name="reys_number" placeholder="@lang('messages.reys_num')"/>
@@ -231,20 +231,28 @@
            AOS.init();
       });
     </script>
+
  <script>
 
 
   //Get the button
   var mybutton = document.getElementById("myBtn");
+  var myMenu = document.querySelector('.section__wrapper');
+  //  var myMenuLink = document.getElementsByClassName("topmenu__link");
 
+  var header = document.get
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
-
   function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.documentElement.scrollTop > 20) {
       mybutton.style.display = "block";
+      myMenu.classList.add("menu_fixed");
+      
+      
     } else {
       mybutton.style.display = "none";
+      myMenu.classList.remove("menu_fixed");
+      
     }
   }
 

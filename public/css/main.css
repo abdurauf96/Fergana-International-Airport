@@ -2033,7 +2033,7 @@ a {
 }
 .header .dropdown, .header a, .header select, .header__versiya, .header__date {
 	color: #ffffff;
-	font-size: 14px;
+	font-size: 17px;
 	font-weight: 600;
 	/* letter-spacing: 0.34px */
 }
@@ -2294,7 +2294,7 @@ a {
 	z-index: 99;
 	overflow: hidden;
 	background: #fff;
-	border-radius: 5px;
+	
 	white-space: nowrap
 }
 .megadrop ul {

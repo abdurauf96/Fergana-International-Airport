@@ -3,13 +3,15 @@
       <div class="slider__item lazy main-slide--active" data-slide="1">
         
         <div class="slid-blok">
-          <p>@lang('messages.cip_btn')</p>
+          <b>@lang('messages.cip_btn')</b>
+          <p>@lang('messages.cip_btn_desc')</p>
           <hr>
           <button class="footer__otziv cip_btn" type="button" data-toggle="modal" data-target="#CIPmodal">@lang('messages.zakazat')</button>
         </div>
 
         <div class="slid-blok">
-          <p>@lang('messages.xolod_btn')</p>
+          <b>@lang('messages.xolod_btn')</b>
+          <p>@lang('messages.xolod_btn_desc')</p>
           <hr>
           <button class="footer__otziv xolod_btn" type="button" data-toggle="modal" data-target="#xolodmodal">@lang('messages.more')</button>
         </div>

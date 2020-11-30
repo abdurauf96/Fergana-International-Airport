@@ -184,8 +184,6 @@ iframe{
     flex-direction: column;
     text-align: center;
     text-transform: uppercase;
-
-    
 }
 
 .slid-blok hr, .slid-blok2 hr{
@@ -224,7 +222,7 @@ iframe{
 }
 
 .cip_btn_disabled{
-  background-color: #74005f49!important;
+  background-color: #353e4269!important;
   cursor: none!important;
 }
 
@@ -306,6 +304,24 @@ iframe{
 }
 .xolod_btn{
   width: 100%;
+}
+
+.menu_fixed{
+   
+    position: fixed;
+    display: flex;
+    width: 100%;
+    top: 0;
+    justify-content: center;
+    z-index: 999999;
+    background: #222222a6;
+   
+}
+.topmenu__link:hover{
+  background-color: white;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 @media only screen and (max-width: 1380px) {
   .slid-blok{
