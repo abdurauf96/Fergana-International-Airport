@@ -65,8 +65,9 @@
   <div class="@if(\Request::route()->getName()=='home') container @endif  section__wrapper">
     @if(\Request::route()->getName()!='home') <div class="container basic-flex"> @endif
       <a class="section__logo" href="/" >
-        <span>@lang('messages.fer')</span>
-        <span>@lang('messages.mejd')</span>
+        {{-- <span>@lang('messages.fer')</span>
+        <span>@lang('messages.mejd')</span> --}}
+        <img src="/images/logo_feg2.png" alt="" width="300">
       </a>
       <div class="section__menu basic-flex" >
         <button class="btn navbar-btn" type="button"><img src="/images/icons/bars-solid.svg" alt="bars" width="30" height="30"></button>

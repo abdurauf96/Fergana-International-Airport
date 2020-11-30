@@ -89,11 +89,11 @@ iframe{
   }
   
   .usluga__list--link:hover{
-    background-color: #74005f;
+    background-color: #353e42;
     color: white;
   }
   .sidebar_active{
-    background-color: #823a81;
+    background-color: #596a71;
     color: white;
   }
   .timetable {
@@ -160,38 +160,48 @@ iframe{
 }
 
 .topmenu__item .topmenu__link{
-  font-size: 13px;
+  font-size: 15px;
   padding: 5px 7px;
   text-transform: uppercase;
 }
+.slider__item{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 270px;
+}
 .slid-blok{
     width: 600px;
-    position: absolute;
-     right: 923px;
-    bottom: 312px; 
-    float: left;
+    /* position: absolute;
+     right: 1142px;
+    bottom: 210px; 
+    float: left; */
     background-color: rgba(0, 0, 0, 0.5);
-    
     border: none;
     border-radius: 1rem;
-    padding: 4rem 7rem 5rem 3.5rem;
-    /* background-color: red; */
-}
-.slid-blok hr{
-  
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
 
+    
+}
+
+.slid-blok hr, .slid-blok2 hr{
   height: 5px;
+  
   background-color: #eee;
   width: 10rem;
-  margin-left: 0;
   border: none;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px;
+  margin-left: 40px; */
 }
 
         
 
 .cip_title{
-  color: #74005f;
+  color: #353e42;
   font-size: 15pt;
   text-transform: uppercase;
 }
@@ -210,7 +220,7 @@ iframe{
 .mymodal__form input[type="submit"]:hover{
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
-  background-color: #74005f;
+  background-color: #353e42;
 }
 
 .cip_btn_disabled{
@@ -299,8 +309,7 @@ iframe{
 }
 @media only screen and (max-width: 1380px) {
   .slid-blok{
-    right: 500px;
-    bottom: 150px; 
+    width: 500px;
   }
   .topmenu__item .topmenu__link{
       font-size:13px;
@@ -311,26 +320,21 @@ iframe{
 }
 
 @media only screen and (max-width: 960px) {
+  .slider__item{
+    padding-top: 80px;
+  }
   .slid-blok{
-   
-     right: 150px;
-      bottom: 312px; 
-    
+    margin-bottom: 20px;
   }
   
 }
 
 @media screen and (max-width: 768px) {
+  .slider__item{
+    padding-top: 80px;
+  }
   .slid-blok{
-    width: 300px;
-    position: absolute;
-     bottom: 30px;
-    right: 20px;
-    float: left;
-
-    border-radius: 1rem;
-    padding: 1rem;
-    /* background-color: red; */
+    margin-bottom: 20px;
   }
   .footer__otziv{
     line-height: 16px;

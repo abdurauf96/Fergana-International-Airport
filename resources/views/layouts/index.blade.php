@@ -55,7 +55,7 @@
   
     @yield('content')
 
-    <img onclick="topFunction()" title="Вверх" id="myBtn" src="/images/icons/top.png" alt="">
+    <img onclick="topFunction()" title="Вверх" id="myBtn" src="/images/icons/top2.png" alt="">
     <footer class="container-fluid footer">
       <div class="container bottom__wrapper">
         <div class="bottom__head">@lang('messages.title')</div>

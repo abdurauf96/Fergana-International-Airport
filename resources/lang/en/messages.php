@@ -97,7 +97,26 @@ return [
     'podpisatsa'=>'Subscribe',
     'key'=>'keywords',
     'travel'=>"Important information for passengers planning a travel ",
-    'manba'=>'Source:'
+    'manba'=>'Source:',
+
+    //cip form
+    'sps'=>'Thanks. Your appeal has been accepted!',
+    'sps_desc'=>"We will review and inform you shortly!",
+    'cip_title'=>"Take advantage of the CIP room and feel the comfort",
+    'cip_desc'=>"Please provide the requested information!",
+    'req_title'=>"Please fill in all fields!",
+    'zakazat'=>"Book now",
+    'rules'=>"Please read the CIP rules",
+    'cip_rules'=>"<p>The cost of using the CIP room:</p>
+    <p>-for an international flight 110 000 sum</p>
+    <p>-for domestic flights 45 000 sum</p>
+    <p>(booking is free, no refund regardless of flight after service)</p>",
+    'xolod_title'=>"On the territory of our airport there is a refrigerator with a capacity of 120 tons for storing agricultural products",
+    'xolod_desc'=>"Want to know more? In this case, please provide us with your full name. and leave your phone number and we will contact you!",
+    'otpravit'=>"Send",
+    'cip_btn'=>"Convenience for you! Book a seat in the CIP room",
+    'xolod_btn'=>"Refrigerator service with a capacity of 120 tons",
+    'terms'=>'Are you in compliance with the <a style="text-decoration:underline" class="privacy_btn" data-toggle="modal" data-target="#privacyModal" href="#"> CIP rules?  </a>',
 ]
 
 ?>

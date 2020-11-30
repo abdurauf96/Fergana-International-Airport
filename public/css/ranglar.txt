@@ -9,3 +9,8 @@
 #d8aa08 sariq och
 
 #8222da pushti
+
+
+
+gray - #596a71
+to'q gray - #353e42

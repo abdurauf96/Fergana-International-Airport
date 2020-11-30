@@ -4,8 +4,7 @@
         justify-content: center;
     }
     .news__top{
-        border: 1px solid #004a79c7;
-        background-color: #004a79c7;
+        
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -17,8 +16,8 @@
     }
 
     .news__link--active{
-        background-color: white;
-        color: #004a79;
+        background-color: #74005f;
+        color: #fff;
     }
 
     .portner__head {
@@ -53,9 +52,7 @@
         font-size: 13px;
         line-height: 27px;
     }
-    .footer{
-        background-image: url('/images/footer_mob.jpg');
-    }
+    
     .social img {
         max-width: 25px;
     }
