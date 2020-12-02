@@ -137,8 +137,9 @@ iframe{
   .social_icons{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    
+    margin-top: 60px;
   }
+  
   .social_icons span{
     padding-right: 0;
   }
@@ -323,6 +324,7 @@ iframe{
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 @media only screen and (max-width: 1380px) {
   .slid-blok{
     width: 500px;

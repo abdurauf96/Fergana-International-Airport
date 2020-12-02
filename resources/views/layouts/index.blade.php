@@ -38,7 +38,8 @@
             webvisor:true
        });
     </script>
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <noscript><div><img src="https://mc.yandex.ru/watch/56139070" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <body>
@@ -55,7 +56,7 @@
   
     @yield('content')
 
-    <img onclick="topFunction()" title="Вверх" id="myBtn" src="/images/icons/top2.png" alt="">
+    {{-- <img onclick="topFunction()" title="Вверх" id="myBtn" src="/images/icons/top2.png" alt=""> --}}
     <footer class="container-fluid footer">
       <div class="container bottom__wrapper">
         <div class="bottom__head">@lang('messages.title')</div>
@@ -236,7 +237,7 @@
 
 
   //Get the button
-  var mybutton = document.getElementById("myBtn");
+  //var mybutton = document.getElementById("myBtn");
   var myMenu = document.querySelector('.section__wrapper');
   //  var myMenuLink = document.getElementsByClassName("topmenu__link");
 
@@ -245,14 +246,13 @@
   window.onscroll = function() {scrollFunction()};
   function scrollFunction() {
     if (document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
+      //mybutton.style.display = "block";
       myMenu.classList.add("menu_fixed");
       
       
     } else {
-      mybutton.style.display = "none";
+      //mybutton.style.display = "none";
       myMenu.classList.remove("menu_fixed");
-      
     }
   }
 

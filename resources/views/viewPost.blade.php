@@ -41,6 +41,9 @@
                        
                     </div>
                     @endif
+                    
+                    <div class="wifi__text">{!! $post->getTranslatedAttribute('body', \App::getLocale()) !!}</div>
+                    
                     @if ($post->slider_images)
                     <div class="owl-carousel" style="float: left">
                         @php
@@ -53,9 +56,7 @@
                         @endforeach
                     </div>
                     @endif
-                    <div class="wifi__text">{!! $post->getTranslatedAttribute('body', \App::getLocale()) !!}</div>
                     
-
                     <div class="date_social">
                         <div class="post_date">
                             <img src="/images/icons/calendar.svg" alt="">

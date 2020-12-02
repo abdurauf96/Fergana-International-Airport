@@ -1,8 +1,9 @@
 @extends('layouts.index')
 
 @section('content')
+<div class="page-body raspisaniya-body">
     @include('sections.header')
-    @include('sections.top')
+    
     @component('layouts.bread')
         @slot('page_img')
             /images/tablo.jpg
@@ -11,9 +12,9 @@
             @lang('messages.table')
         @endslot
     @endcomponent
-    <div class="container-fluid usluga"> 
+    
            
-        <div class="container-fluid timetable">
+        <div class="timetable">
             <div class="container">
                 <table class="table table-bordered">
                 <thead>
@@ -223,9 +224,9 @@
             </div>
         </div>
        
-    </div>
         
     @include('sections.partners')
+</div>
 @endsection
 @section('script')
 

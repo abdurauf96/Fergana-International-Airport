@@ -2,7 +2,7 @@
 
 @section('content')
 @include('sections.header')
-@include('sections.top')
+
     @component('layouts.bread')
         @slot('page_img')
             /images/tablo.jpg

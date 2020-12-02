@@ -1,5 +1,4 @@
 @extends('layouts.index')
-
 @section('content')
 <div class="page-body">
     @include('sections.header')
