@@ -6,13 +6,13 @@
 
 
   @section('content')
-  <div class="header-wrapper" style="background: url(../images/bg5.jpg) no-repeat right center;
-  background-size: cover;">
+  <div class="header-wrapper" style="background: url(../images/newyear4.jpg) no-repeat right center;
+  background-size: cover; background-attachment:fixed">
     @include('sections.header')
-    @include('sections.slider')
+    @include('sections.slider')  
   </div>    
       <div style="background: url(../images/bg4.jpg) no-repeat right center;
-      background-size: cover;">
+      background-size: cover; background-attachment:fixed">
         @include('sections.tablo')
         @include('sections.services')
         

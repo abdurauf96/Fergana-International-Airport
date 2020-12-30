@@ -221,10 +221,13 @@
         </a>
 
     </div>
-    
+    <div id="snow"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/js/main.js" ></script>
     <script src="/src/aos.js"></script>
     <script src="/js/jquery.lazy.min.js"></script>
+    <script src="/js/snow.js"></script>
+    
     @yield('js-files')
     
     <script>
